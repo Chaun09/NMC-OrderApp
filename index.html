@@ -33,9 +33,32 @@ $(window).load(function () {
         progressBar: false
     })
 });
+
 $(window).load(function () {
     $('.carousel1').carouFredSel({
-        auto: false,
+        auto: true,
+        width: 960,
+        items: {
+            visible: {
+                min: 1,
+                max: 4
+            },
+            height: 'auto',
+            width: 240,
+        },
+        responsive: false,
+        scroll: 1,
+        mousewheel: false,
+        swipe: {
+            onMouse: false,
+            onTouch: false
+        }
+    });
+});
+
+$(window).load(function () {
+    $('.carousel2').carouFredSel({
+        auto: true,
         prev: '.prev',
         next: '.next',
         width: 960,
@@ -56,11 +79,9 @@ $(window).load(function () {
         }
     });
 });
+
 </script>
-<!--[if lt IE 9]>
-<script src="js/html5shiv.js"></script>
-<link rel="stylesheet" media="screen" href="css/ie.css">
-<![endif]-->
+
 </head>
 <body>
 <div class="main">
@@ -157,15 +178,16 @@ $(window).load(function () {
           transform: translate(0%,50%);
         }
       </style>
-      <div class="clear"></div>
+      <div class="clear">
+
+      </div>
       <div class="grid_12">
         <div class="hor_separator"></div>
       </div>
       <div class="grid_12">
         <div class="car_wrap">
-          <h2>Best Choice</h2>
-          <a href="#" class="prev"></a>
-          <a href="#" class="next"></a>
+          <h2>Best Choices For Europe Food</h2>
+          
           <ul class="carousel1">
             <li>
               <div><img src="images/page1_img1.jpg" alt="">
@@ -215,7 +237,125 @@ $(window).load(function () {
           </ul>
         </div>
       </div>
-      <div class="clear"></div>
+      <div class="clear">
+
+      </div>
+      <div class="grid_12">
+        <div class="hor_separator">
+        </div>
+      </div>
+      <div class="grid_12">
+        <div class="car_wrap_2">
+          <h2>Best Choices For VietNamese Food</h2>
+          <a href="#" class="prev"></a>
+          <a href="#" class="next"></a>
+          <ul class="carousel2">
+            <li>
+              <div><img src="images/bánhtrang.jpg" alt="">
+                <div class="col1 upp"> <a href="#">Bánh Xèo</a></div>
+                <span> Best Seller</span>
+                <div class="price_1">500.000VNĐ</div>
+              </div>
+            </li>
+            <li>
+              <div><img src="images/comtam.jpg" alt="">
+                <div class="col1 upp"> <a href="#">Cơm Tấm</a></div>
+                <span>Best Seller</span>
+                <div class="price_1">500.000VNĐ</div>
+              </div>
+            </li>
+            <li>
+              <div><img src="images/banhcuon.jpg" alt="">
+                <div class="col1 upp"> <a href="#">Bánh Cuốn</a></div>
+                <span> Best Seller</span>
+                <div class="price_1">500.000VNĐ</div>
+              </div>
+            </li>
+            <li>
+              <div><img src="images/bunbohue.jpg" alt="">
+                <div class="col1 upp"> <a href="#">Bún Bò Huế</a></div>
+                <span> Best Seller </span>
+                <div class="price_1">500.000VNĐ</div>
+              </div>
+            </li>
+            <li>
+              <div><img src="images/buncha.jpg" alt="">
+                <div class="col1 upp"> <a href="#">Bún Chả</a></div>
+                <span>Best Seller</span>
+                <style>
+                  span {
+                    color: red;
+                    font-size: 15px;
+                    justify-content: center;
+                  }
+                  .price_1 {
+                    transform: translate(-81%,0%);
+                  }
+                </style>
+                <div class="price_1">500.000VNĐ</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <style>
+        .carousel2 {
+	height: 249px;
+}
+
+.carousel2 li {
+	float: left;
+	width: 240px !important;
+	font-size: 12px;
+}
+
+.carousel2 li >div {
+	padding: 0 10px;
+}
+
+.carousel2 li .price_1 {
+	display: inline-block;
+	background: #699440;
+	color: #fff;
+	min-width: 41px;
+	height: 38px;
+	border-radius: 4px;
+	font: 20px/36px 'Lobster', cursive;
+	text-align: center;
+	margin-top: 15px;
+}
+
+
+.carousel2 li span {
+	line-height: 16px;
+}
+
+.carousel2 img {
+	box-shadow: 2px 2px 3px #ddd;
+	padding: 4px;
+	background: #fff;
+	border: 1px solid #e6e4e4;
+	 -moz-box-sizing: border-box;
+ -webkit-box-sizing: border-box;
+ -o-box-sizing: border-box;
+ box-sizing: border-box;
+ margin-bottom: 19px;
+}
+.car_wrap_2 {
+	position: relative;
+	margin: 0 -10px;
+	overflow: hidden;
+}
+
+.content.page1 .car_wrap_2 h2 {
+	padding-left: 10px;
+	padding-top: 23px;
+	padding-bottom: 3px;
+}
+      </style>
+      <div class="clear">
+
+      </div>
       <div class="bottom_block">
         <div class="grid_6">
           <h3>Follow Us</h3>
