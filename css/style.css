@@ -110,7 +110,17 @@ a:hover {
 	color: #699440;
 }
 
-a.btn {
+a.btn_1 {
+	font-size: 12px;
+	display: inline-block;
+	background: #e2827e;
+	padding: 5px 14px 4px;
+	border-radius: 4px;
+	margin-top: 17px;
+	color: #fff;
+	text-transform: uppercase;
+}
+a.btn_2 {
 	font-size: 12px;
 	display: inline-block;
 	background: #e2827e;
@@ -121,11 +131,19 @@ a.btn {
 	text-transform: uppercase;
 }
 
-a.btn:hover {
+a.btn_1:hover {
+	background: #699440;
+}
+a.btn_2:hover {
 	background: #699440;
 }
 
-a.btn.m1 {
+a.btn_1.m1 {
+	margin-top: 30px;
+	margin-bottom: 1px;
+}
+
+a.btn_2.m1 {
 	margin-top: 30px;
 	margin-bottom: 1px;
 }
@@ -521,10 +539,12 @@ margin-top: 13px;
 	top: -4px;
 }
 
-.news a.btn {
+.news a.btn_1 {
 	margin-top: 5px;
 }
-
+.news a.btn_2 {
+	margin-top: 5px;
+}
 #newsletter {
 	position: relative;
 }
@@ -556,7 +576,7 @@ margin-top: 13px;
  box-sizing: border-box;
 }
 
-#newsletter a.btn {
+#newsletter a.btn_1 {
 	float: right;
 	text-transform: capitalize;
 	font-size: 13px;
