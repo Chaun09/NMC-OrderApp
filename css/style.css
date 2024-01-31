@@ -406,18 +406,18 @@ header h1 a img {
 
 
 
-.carousel2 li img {
+.carousel3 li img {
 	float: left;
 	margin-top: -1px;
 	margin-right: 20px;
 }
 
-.carousel2 li {
+.carousel3 li {
 	float: left;
 	width: 410px !important;
 }
 
-.carousel2 li .title {
+.carousel3 li .title {
 	font-size: 24px;
 	line-height: 22.9px;
 	font-family: "Times New Roman", Times, serif;
@@ -426,7 +426,7 @@ header h1 a img {
 	padding-top: 36px;
 }
 
-.carousel2 .col1 {
+.carousel3 .col1 {
 	line-height: 22.9px;
 	margin-bottom: 6px;
 	padding-top: 10px;
