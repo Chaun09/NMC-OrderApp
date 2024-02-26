@@ -16,6 +16,31 @@
 <link rel="stylesheet" media="screen" href="css/ie.css">
 <![endif]-->
 </head>
+<script>
+  $(window).load(function () {
+      $('.ca10').carouFredSel({
+          auto: false,
+          prev: '.prev2',
+          next: '.next2',
+          width: 410,
+          items: {
+              visible: {
+                  min: 1,
+                  max: 1
+              },
+              height: 'auto',
+              width: 410,
+          },
+          responsive: false,
+          scroll: 1,
+          mousewheel: false,
+          swipe: {
+              onMouse: false,
+              onTouch: false
+          }
+      });
+  });
+</script>
 <body>
 <div class="main">
   <header>
@@ -50,22 +75,39 @@
   </header>
   <div class="content">
     <div class="container_12">
-      <div class="grid_7">
-        <h2 class="head2">Latest News</h2>
-        <div class="news"> <img src="images/page5_img1.jpg" alt="" class="img_inner fleft">
-          <div class="extra_wrapper">
-            <div class="col1">Aenean nonummy hendrerit mau rellus porta. Fusce suscipit varius m sociis natoque penaibet mapaturent. </div>
-            <p>Montes nasetur ridiculumula dui. Fusce feugiatlesuada o krjg fdio. Morbi nusem. GIoadscs lkierhdc v hfrjgDuis ultricies pharetra magna. Donec accusan mal esuada orcec sit amet eros. </p>
-            <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed oreetliquam tellus dolor elementum vel cursus eleife. agna. Donec accumsan malesuada orcec sit amet </p>
-            <a href="#" class="btn">More</a> </div>
+      
+      <div class="grid_5 prefix_2" >
+        <div class="caroufredsel_wrapper" style="display: block; text-align: start; float: none; position: relative; inset: auto; z-index: auto; width: 410px; height: 600px; margin: 0px; overflow: hidden;">
+        <h2>Testimonials</h2>
+        <ul class="ca10">
+          <li>
+            <blockquote> <img src="images/page2_img2.png" alt="">
+              <div class="extra_wrapper">
+                <div class="title">Sara &amp; Kevin <br>
+                  Jonson</div>
+              </div>
+              <div class="clear"></div>
+              <p class="col1"><a href="#">Euismod pellentesque in dui. Semper, enim eget eleifend faucibus, sem libero gravida erat, sit amet viverra dui nisl non nulla. Pellentesque in dui euismod. </a></p>
+              <p>Curabitur felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringilla ipsum. Inte ger non nulla sem, eget volutpat augue. Curabitur in turpisju massa. Donec et nibh non turpis pellentesque suscipit eget vel odio.  Aliquam consectetur. Fringilla ipsum. </p>
+              <p>Ringilla ipsum. Donec et nibh non turpis pellentesque suscipit eget vel odio. Sed tempus orci tempus libero suscipit elementum. Aliquam consectetur. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop pelle ntesque suscipit eget consectetur.</p>
+            </blockquote>
+          </li>
+          <li>
+            <blockquote> <img src="images/page2_img2-1.png" alt="">
+              <div class="extra_wrapper">
+                <div class="title">Moira &amp; Brett<br>
+                  Clark</div>
+              </div>
+              <div class="clear"></div>
+              <p class="col1">Pellentesque in dui euismod. Aliquam semper, enim eget eleifend faucibus, sem libero gravida erat, sit amet viverra dui nisl non nulla. Pellentesque in dui euismod nibh suscipi. </p>
+              <p>Donec eu felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringilla ipsum. Inte ger non nulla sem, eget volutpat augue. Curabitur in turpisju massa. Donec et nibh non turpis pellentesque suscipit eget vel odio.  Aliquam consectetur. Ghfgop Maecnas cursus frin.</p>
+              <p>Curabitur in turpisju massa. Donec et nibh non turpis pellen tesque suscipit eget vel odio. Sed tempus orci tempus libero suscipit elementum. Aliquam consectetur. Ghfgop Maecnas cursus fringilla sagittis. Donec eu felis purus, iaculis fringi. ipsum. Integer non nulla sem, eget volutpat augue. Ghfgop Maecnas cursus fringilla sagittis.</p>
+            </blockquote>
+          </li>
+        </ul>
         </div>
-        <div class="news mb0"> <img src="images/page5_img2.jpg" alt="" class="img_inner fleft">
-          <div class="extra_wrapper">
-            <div class="col1">Nuinean nonummy hendrerit mau rellus porta. Fusce varius m sociis natoque penaibet magni partur.</div>
-            <p>Ent montes nasetur ridiculumula dui. KHgsce feugiat malesuada o krjg fdio. Joorbi nusem. GIoadscs lkierdc vhfrujgDuis ultricies pharetra magna. Donec accumsan masuada orcec sit amet eros. </p>
-            <p>Hioasrem ipsum dolor sit amet consectetuer adiscing elit. Mauris fermentum dictum magna. Ed oreetliquam tellus dolor dapibus eget elementum vel cursus eleife. agna. Donec accumsan malesuada orcec sit amrbi. </p>
-            <a href="#" class="btn">More</a> </div>
-        </div>
+        <a href="#" class="next2"></a> 
+        <a href="#" class="prev2"></a> 
       </div>
       <div class="grid_3 prefix_2">
         <h2 class="head2">Categories</h2>
@@ -123,6 +165,7 @@
           </form>
         </div>
       </div>
+      </div>
       <div class="clear"></div>
     </div>
   </div>
@@ -134,4 +177,59 @@
   </div>
 </footer>
 </body>
+<style>
+  .ca10 li img {
+	float: left;
+	margin-top: -1px;
+	margin-right: 20px;
+}
+
+.ca10 li {
+	float: left;
+	width: 410px !important;
+}
+
+.ca10 li .title {
+	font-size: 24px;
+	line-height: 22.9px;
+	font-family: "Times New Roman", Times, serif;
+	color: #e2827e;
+	text-align: center;
+	padding-top: 36px;
+}
+
+.ca10 .col1 {
+	line-height: 22.9px;
+	margin-bottom: 6px;
+	padding-top: 10px;
+} 
+
+.prev2 {
+	background: url(../images/prevnext.png) 0 bottom no-repeat;
+	display: block;
+	float: right;
+	width: 32px;
+	z-index: 999;
+	height: 30px;
+	margin-top: 8px;
+}
+
+.prev2:hover {
+	background-position: 0 0;
+}
+
+.next2 {
+	background: url(../images/prevnext.png) right bottom no-repeat;
+	display: block;
+	z-index: 999;
+	float: right;
+	width: 32px;
+	height: 30px;
+	margin-top: 8px;
+}
+
+.next2:hover {
+	background-position: right 0;
+}
+</style>
 </html>
