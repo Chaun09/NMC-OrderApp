@@ -20,10 +20,10 @@
 <script>
 $(window).load(function () {
   $('.carousel1').carouFredSel({
-      auto: false,
+      auto: true,
       prev: '.next4',
       next: '.prev4',
-      width: 400,
+      width: 720,
       items: {
           visible: {
               min: 1,
@@ -156,16 +156,17 @@ $(window).load(function () {
           }
         
         </style>
+        <div class="winelist">
         <h2 class="head1">Wine List</h2>
         <div class="menu">
           <div class="grid_3 alpha1"> 
            
               <style>
                 .next4{
-                  transform: translate(300%,800%);
+                  transform: translate(2000%, -150%);
                 }
                 .prev4{
-                  transform: translate(-200%,800%);
+                  transform: translate(2000%,-150%);
                 }
              
               </style>
@@ -176,7 +177,7 @@ $(window).load(function () {
               <style>
                 div.caroufredsel_wrapper2
                 {
-                  transform: translate(0%,-15%);
+                  transform: translate(10%,-5%);
     
                 }
               </style>
@@ -184,29 +185,39 @@ $(window).load(function () {
                 <li>
                   <div>
                     <img src="images/page1_img1.jpg" alt="">
-                    <div class="col1 upp"> <a href="#"><p style="transform: translate(24%,0%);">Rượu Vang Đỏ Mỹ</p></a></div>
+                    <div class="col1 upp"> <a href="#"><p style="transform: translate(24%,0%);color: red;">Rượu Vang Đỏ Mỹ</p></a>
+                      <p class="font">Rượu Nhập Khẩu </p>
+                    </div>
+                    
                    
                     <div class="price">500.000VNĐ</div>
                   </div>
                 </li>
                 <li>
                   <div><img src="images/page1_img2.jpg" alt="">
-                    <div class="col1 upp"> <a href="#"> <p style="transform: translate(24%,0%);">Rượu Nếp Cái Hoa Vàng</p></a></div>
+                    <div class="col1 upp"> <a href="#"> <p style="transform: translate(17%,0%);color: red;">Rượu Nếp Cái Hoa Vàng</p></a>
+                      <p class="font">Rượu Nhập Khẩu </p>
+                    </div>
+                    
                     
                     <div class="price">500.000VNĐ</div>
                   </div>
                 </li>
                 <li>
                   <div><img src="images/page1_img3.jpg" alt="">
-                    <div class="col1 upp"> <a href="#"> <p style="transform: translate(24%,0%);">Rượu Chivas</p></a></div>
-                    
+                    <div class="col1 upp"> <a href="#"> <p style="transform: translate(33%,0%);color: red;">Rượu Chivas</p></a>
+                      <p class="font">Rượu Nhập Khẩu </p>
+                    </div>
+                   
                     <div class="price">500.000VNĐ</div>
                   </div>
                 </li>
                 <li>
                   <div><img src="images/page1_img4.jpg" alt="">
-                    <div class="col1 upp"> <a href="#"><p style="transform: translate(24%,0%);">Rượu Đức</p></a></div>
-                    
+                    <div class="col1 upp"> <a href="#"><p style="transform: translate(35%,0%);color: red;">Rượu Đức</p></a>
+                      <p class="font">Rượu Nhập Khẩu </p>
+                    </div>
+                 
                     <div class="price">500.000VNĐ</div>
                   </div>
                 </li>
@@ -214,15 +225,19 @@ $(window).load(function () {
                   <div>
                     <img src="images/page1_img3.jpg" alt="">
                     <div class="col1 upp"> 
-                    <a href="#"> <p style="transform: translate(24%,0%);">Rượu Gạo Lên Men</p> </a>
+                    <a href="#"> <p style="transform: translate(24%,0%); color: red;">Rượu Gạo Lên Men</p> </a>
+                    <p class="font">Rượu Nhập Khẩu </p>
                     </div>
                     
                     <style>
                
                      
                       .price {
-                        transform: translate(60%,0%);
+                        transform: translate(55%,-200%);
     
+                      }
+                      .font {
+                        transform: translate(26%,-40%);
                       }
                     </style>
                     <div class="price">500.000VNĐ</div>
@@ -236,11 +251,16 @@ $(window).load(function () {
           </div>
     
         </div>
+      </div>
         <style>
                  
           .content h2.head1{
             font-size: 24px;
           } 
+          div.caroufredsel_wrapper{
+            transform: translate(11%,0%);
+          }
+        
 
         </style>
 
@@ -269,6 +289,9 @@ $(window).load(function () {
               }
               .signup{
                 transform: translate(800%,-101.1%);
+              }
+              .winelist {
+                transform: translate(-145%,10%);
               }
               </style>
           </nav>
