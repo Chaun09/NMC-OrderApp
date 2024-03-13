@@ -20,7 +20,7 @@
 <script>
 $(window).load(function () {
   $('.carousel1').carouFredSel({
-      auto: false,
+      auto: false, 
       prev: '.next4',
       next: '.prev4',
       width: 720,
@@ -87,24 +87,28 @@ $(window).load(function () {
 
         <div class="menu">
           <div class="grid_3 alpha"> 
-            <ul class="list">
-              <br>
-              <li><a href="#">Ngon Theo Kiểu Châu Á, Chất Theo Kiểu Châu Âu</a></li>
-              <br>
-              <li><a href="#">Đa Dạng Thực Đơn</a></li>
-              <br>
-              <li><a href="#">Phục Vụ Tận Tâm, Nhiệt Tình</a></li>
-              <br>
-              <li><a href="#">Chuyên Nghiệp</a></li>
-              <br>
-              <li><a href="#">Mở 24/24</a></li>
-              <br>
-              <li><a href="#">Giá Cả Phải Chăng</a></li>
-            </ul>
+            <div class="block">
+              <img style="height: 100px; width: 100px; position: relative;" src="images/banhcuon.jpg" alt="bánh cuốn">
+              
+
+            </div>
+            
           </div>
     
         </div>
         <style>
+          .block{
+            
+            
+            box-shadow: 0 14px 28px rgba(0 , 0, 0, 0.25), 0 0px 10px rgba(0, 0, 0, 0.22);
+            overflow: hidden;
+            
+            
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+          }
           div.grid_3.alpha{
             width: 500px;
           }
@@ -122,104 +126,11 @@ $(window).load(function () {
         <div class="clear"></div>
       </div>
       <div class="grid_5 prefix_1">
-        <h2 class="head2">Other Drinks List</h2>
+        
 
         <div class="menu">
           <div class="grid_3 alpha2"> 
-            <ul class="list1">
-              <br>
-              <li>
-                <div>
-                  <img class="img_inner" id="ima" src="images/page1_img3.jpg" alt="">
-                  <div class="sp">
-                  <div class="col1 upp" style="transform: translate(0%,10%);"> <a href="#">Bánh Dâu </a></div>
-                  <span><p class="best">Best Seller</p></span>
-                  </div>
-                  <style>
-                    .best{
-                      transform: translate(0%,0%);
-                    }
-
-                    .sp{
-                      transform: translate(25%,-260%);
-                    }
-
-                    #ima{
-                      height: 80px;
-                      width: 80px;
-                    }
-                    span {
-                      color: red;
-                      font-size: 15px;
-                      justify-content: center;
-                    }
-                    .price3 {
-                      transform: translate(0%,0%);
-                      display: inline-block;
-	                    background: #699440;
-	                    color: #fff;
-	                    min-width: 10px;
-	                    height: 20px;
-	                    border-radius: 4px;
-	                    font: 20px/20px 'Lobster', cursive;
-	                    text-align: center;
-	                    margin-top: 20px;
-  
-                    }
-                  
-                    
-                   
-
-                  </style>
-                  <div class="price3" style="transform: translate(90%,-650%);">500.000VNĐ</div>
-                
-                </div>
-              </li>
-           
-              <br>
-              <li>  
-                <div>
-                <img class="img_inner" id="ima" src="images/page1_img3.jpg" alt="">
-                <div class="col1 upp"> <a href="#">Bánh Dâu </a></div>
-                <span>Best Seller</span>
-                <style>
-                  #ima{
-                    height: 80px;
-                    width: 80px;
-                  }
-                  span {
-                    color: red;
-                    font-size: 15px;
-                    justify-content: center;
-                  }
-                  .price3 {
-                    transform: translate(-70%,0%);
-                    display: inline-block;
-                    background: #699440;
-                    color: #fff;
-                    min-width: 10px;
-                    height: 20px;
-                    border-radius: 4px;
-                    font: 20px/20px 'Lobster', cursive;
-                    text-align: center;
-                    margin-top: 20px;
-
-                  }
-                  
-                 
-
-                </style>
-                <div class="price3">500.000VNĐ</div>
-              </div></li>
-              <br>
-              <li><a href="#"></a></li>
-              <br>
-              <li><a href="#"></a></li>
-              <br>
-              <li><a href="#"></a></li>
-              <br>
-              <li><a href="#"></a></li>
-            </ul>
+      
             
           </div>
     
@@ -227,6 +138,7 @@ $(window).load(function () {
         <style>
           div.grid_3.alpha2{
             width: 400px;
+            height: 400px;
           }
           .head2 {
             transform: translate(3%,25%);
@@ -237,9 +149,6 @@ $(window).load(function () {
         
         </style>
      
-        <style>
-         
-        </style>
         <div class="winelist">
         <h2 class="head1">Wine List</h2>
         <div class="menu">
