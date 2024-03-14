@@ -12,11 +12,13 @@
 <script src="js/jquery.easing.1.3.js"></script>
 <script src="js/sForm.js"></script>
 <script src="js/jquery.carouFredSel-6.1.0-packed.js"></script>
+
 <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
 <link rel="stylesheet" media="screen" href="css/ie.css">
 <![endif]-->
 </head>
+
 <script>
 $(window).load(function () {
   $('.carousel1').carouFredSel({
@@ -96,12 +98,42 @@ $(window).load(function () {
             
           </div>
           <div class="tenmonan">
-            <p style="text-align: center;">Bánh Cuốn</p>
-            <p style="text-align: center;transform: translate(0%,-80%);font-size: 15px;color: red;">500.000VNĐ</p>
-            <button class="button">Order </button>
+            <p style="text-align: center;text-overflow: ellipsis;color: black; transform: translate(3%,0%);" >Bánh Cuốn</p>
             
-          
-
+            <div class="product" id="product">
+              <p class="nb"><span id="quantity">0</span></p>
+              <div class="ud">
+              <button class="buto" onclick="decreaseQuantity()"><p class="pppp">-</p></button>
+              <button class="but" onclick="increaseQuantity()"><p class="pppp">+</p></button>
+            </div>
+            <script>
+            var quantityElement = document.getElementById("quantity");
+            
+            // Số lượng sản phẩm tối thiểu và tối đa
+            var minQuantity = 0;
+            var maxQuantity = 100;
+            
+            // Hàm để giảm số lượng sản phẩm
+            function decreaseQuantity() {
+              var currentQuantity = parseInt(quantityElement.textContent);
+              if (currentQuantity > minQuantity) {
+                currentQuantity--;
+                quantityElement.textContent = currentQuantity;
+              }
+            }
+            
+            // Hàm để tăng số lượng sản phẩm
+            function increaseQuantity() {
+              var currentQuantity = parseInt(quantityElement.textContent);
+              if (currentQuantity < maxQuantity) {
+                currentQuantity++;
+                quantityElement.textContent = currentQuantity;
+              }
+            }
+            </script>
+           </div>
+           
+            <button class="button">Order </button>
           </div>
           <br>
           <br>
@@ -110,6 +142,8 @@ $(window).load(function () {
           <br>
           <br>
           <br>
+          
+          
           <div class="grid_3 alpha"> 
             <div class="block">
               <img style="height: 100px; width: 100px; position: relative;" src="images/banhcuon.jpg" alt="bánh cuốn">
@@ -120,25 +154,187 @@ $(window).load(function () {
             
           </div>
           <div class="tenmonan">
-            <p style="text-align: center;">Bánh Cuốn</p>
-            <p style="text-align: center;transform: translate(0%,-80%);font-size: 15px;color: red;">500.000VNĐ</p>
+            <p style="text-align: center; text-overflow: ellipsis;color: black;transform: translate(3%,0%)">Bánh Cuốn</p>
+            
+            <div class="product" id="product">
+             <p class="nb"><span  id="quantity1">0</span></p>
+             <div class="ud">
+             <button class="buto" onclick="deQuantity()"><p class="pppp">-</p></button>
+             <button class="but" onclick="inQuantity()"><p class="pppp">+</p></button>
+            </div>
+            <script>
+            var qE = document.getElementById("quantity1");
+            
+            // Số lượng sản phẩm tối thiểu và tối đa
+            var minQtt = 0;
+            var maxQtt = 100;
+            
+            // Hàm để giảm số lượng sản phẩm
+            function deQuantity() {
+              var cQ = parseInt(qE.textContent);
+              if (cQ > minQtt) {
+                cQ--;
+                qE.textContent = cQ;
+              }
+            }
+            
+            // Hàm để tăng số lượng sản phẩm
+            function inQuantity() {
+              var cQ = parseInt(qE.textContent);
+              if (cQ < maxQtt) {
+                cQ++;
+                qE.textContent = cQ;
+              }
+            }
+            </script>
+           </div>
+           
             <button class="button">Order </button>
+
+            
             
           
 
           </div>
+          <div class="grid_900 alpha1"> 
+            <div class="block">
+              <img style="height: 100px; width: 100px; position: relative;" src="images/banhcuon.jpg" alt="bánh cuốn">
+           
+              
+
+            </div>
+            
+          </div>
+          <div class="tenmonan">
+            <p style="text-align: center;text-overflow: ellipsis;color: black; transform: translate(185%,-1810%);" >Bánh Cuốn</p>
+            
+            <div class="product1" id="product">
+              <p class="nb"><span id="quantity2">0</span></p>
+              <div class="ud">
+              <button class="buto" onclick="doQuantity()"><p class="pppp">-</p></button>
+              <button class="but" onclick="upQuantity()"><p class="pppp">+</p></button>
+            </div>
+            <script>
+            var qE1 = document.getElementById("quantity2");
+            
+            // Số lượng sản phẩm tối thiểu và tối đa
+            var mQ1 = 0;
+            var mQ2 = 100;
+            
+            // Hàm để giảm số lượng sản phẩm
+            function doQuantity() {
+              var cQ1 = parseInt(qE1.textContent);
+              if (cQ1 > mQ1) {
+                cQ1--;
+                qE1.textContent = cQ1;
+              }
+            }
+            
+            // Hàm để tăng số lượng sản phẩm
+            function upQuantity() {
+              var cQ1 = parseInt(qE1.textContent);
+              if (cQ1 < mQ2) {
+                cQ1++;
+                qE1.textContent = cQ1;
+              }
+            }
+            </script>
+           </div>
+           
+            <button class="button1">Order </button>
+          </div>
+          
+          
     
     
         </div>
         <style>
+          .product1{
+            transform: translate(470%,-610%);
+            width: fit-content;
+            text-align: center;
+            justify-self: center;
+          }
+           
+          div.grid_900.alpha1{
+            transform: translate(-10%,-321%);
+          }
+          .nb{
+            transform: translate(13%,0%);
+          }
+          .pppp{
+            text-align: center;
+            position: relative;
+            justify-content: center;
+          }
+          .ud{
+            transform: translate(13%,-85%);
+          }
+          .product{
+            transform: translate(55%,-30%);
+            width: fit-content;
+            text-align: center;
+            justify-self: center;
+          }
+          
+         
+          .but{
+            height: 20px;
+            width: 20px;
+            border-radius: 20px;
+            text-align: center;
+            justify-self: center;
+
+
+          }
+          .but:hover{
+            background-color: #e2827e;
+          }
+          .buto:hover{
+            background-color: #e2827e;
+          }
+          .buto{
+            height: 20px;
+            width: 20px;
+            border-radius: 20px;
+            text-align: center;
+
+          }
+          .button{
+            height: 30px;
+           border-radius: 9px;
+           transform: translate(55%,-100%);
+           background-color: #5fa022;
+           
+          }
+          .button1{
+            height: 30px;
+           border-radius: 9px;
+           transform: translate(425%,-1185%);
+           background-color: #5fa022;
+           
+          }
+
+          .button:hover{
+            background-color:#e2827e ;
+            transition: inherit;
+            
+
+          }
+          h2.hb1{
+            transform: translate(2%,-30%);
+          }
 
         
           .tenmonan{
             height: 100px;
             width: 100px;
+            transform: translate(0%,-30%);
+
           }
         
           .block{
+            transform: translate(0%,-30%);
             
             
             box-shadow: 0 14px 28px rgba(0 , 0, 0, 0.25), 0 0px 10px rgba(0, 0, 0, 0.22);
@@ -159,6 +355,13 @@ $(window).load(function () {
             font-size: 24px;
           }
         </style>
+
+
+        <br>
+        <br>
+
+        
+        
 
         
         
@@ -287,10 +490,10 @@ $(window).load(function () {
             transform: translate(11%,0%);
           }
           div.bottom_block{
-            padding-top: 600px;
+            padding-top: 500px;
           }
           div.winelist{
-            transform: translate(-146%,700%);
+            transform: translate(-146%,900%);
           }
         
 
@@ -299,7 +502,7 @@ $(window).load(function () {
 
         
       </div>
-      <img style="size: 100px; position:center;transform: translate(1%,4000%);" src="images/hor_separator.png">
+      <img style="size: 200px; position:center;transform: translate(1%,3300%);" src="images/hor_separator.png">
       <div class="clear"></div>
       <div class="bottom_block">
         <div class="grid_6">
