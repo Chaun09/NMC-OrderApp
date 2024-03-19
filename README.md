@@ -14,4 +14,14 @@ CONTACTS:
 
 
 
+MENU:
+
+![Screenshot 2024-03-19 092428](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/7dbff8be-bb48-4794-a3cc-37fe37d3615f)
+
+![Screenshot 2024-03-19 092953](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/266d9aad-50c8-4482-92f5-e30205b755d6)
+
+
+
+
+
 
