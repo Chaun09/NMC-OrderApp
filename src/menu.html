@@ -22,7 +22,7 @@
 <script>
 $(window).load(function () {
   $('.carousel1').carouFredSel({
-      auto: false, 
+      auto: true, 
       prev: '.next4',
       next: '.prev4',
       width: 720,
@@ -713,7 +713,7 @@ $(window).load(function () {
             transform: translate(-146%,645%);
           }
           .down{
-            transform: translate(0%,270%);
+            transform: translate(0%,210%);
           }
           .down1{
             transform: translate(0%,260%);
@@ -735,8 +735,13 @@ $(window).load(function () {
         <div class="grid_6">
           <div class="down">
           <h3>Follow Us</h3>
-          <div class="socials"> <a href="#"></a> <a href="#"></a> <a href="#"></a> </div>
+          <div class="socials"> 
+            <a href="#"><img class="fb" src="images/fb.jpg" height="30px" width="30px"></a> 
+            <a href="#"><img class="ig" style="transform: translate(5%,-5%);" src="images/ig.jpg" height="33px" width="33px"></a> 
+            <a href="#"><img class="tw" style="transform: translate(5%,0%);" src="images/tw.png" height="30px" width="30px"></a> 
+          </div>
           <nav>
+            <div class="bt-mn">
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="about-us.html">About Us</a></li>
@@ -744,10 +749,15 @@ $(window).load(function () {
               <li><a href="portfolio.html">Moments</a></li>
               <li><a href="news.html">News</a></li>
               <li><a href="contacts.html">Contacts</a></li>
-              <li class="signin"><a href="html/signin.html">Sign In</a></li>
-              <li class="signup"><a href="html/signup.html">Sign Up</a></li> 
+              <!-- <li class="signin"><a href="html/signin.html">Sign In</a></li>
+              <li class="signup"><a href="html/signup.html">Sign Up</a></li>  -->
             </ul>
+          </div>
             <style>
+              .socials{
+                transform: translate(0%,-15%);
+              }
+             
               .signin{
                 transform: translate(140%, 6%);
               }
