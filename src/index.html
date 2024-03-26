@@ -36,7 +36,7 @@ $(window).load(function () {
 
 $(window).load(function () {
     $('.carousel1').carouFredSel({
-        auto: true,
+        auto: false,
         prev: '.next1',
         next: '.prev1',
         width: 960,
@@ -60,7 +60,7 @@ $(window).load(function () {
 
 $(window).load(function () {
     $('.carousel2').carouFredSel({
-        auto: true,
+        auto: false,
         prev: '.next',
         next: '.prev',
         width: 960,
@@ -128,9 +128,14 @@ $(window).load(function () {
               <li><a href="portfolio.html">Moments</a></li>
               <li><a href="news.html">News</a></li>
               <li><a href="contacts.html">Contacts</a></li>
+              <li><a>Search</a></li>
               <li><a href="cart.html">Cart</a></li>
-              <li><a href="html/signin.html">Sign In</a></li>
-              <li><a href="html/signup.html">Sign Up</a></li>
+              <li class="dropmenu"><a href="html/signin.html">Sign In</a>
+                <ul>
+                <li><a href="html/signup.html">Sign Up</a></li>
+                </ul>
+              </li>
+              
               
 
             </ul>
@@ -319,11 +324,14 @@ $(window).load(function () {
             <li>
               <div>
                 <img src="images/page1_img1.jpg"  alt="">
+                
                 <div class="col1 upp"> <a href="#">Cơm Chiên Kiểu Pháp</a></div>
                 <span> Best Seller</span>
                 <div class="price">500.000VNĐ</div>
               </div>
+              
             </li>
+           
             <li>
               <div><img src="images/page1_img2.jpg" alt="">
                 <div class="col1 upp"> <a href="#">Cơm Cá Mú</a></div>
