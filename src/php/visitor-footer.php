@@ -12,7 +12,7 @@
         <div class="skillsoft-footer" id="skillsoft-footer">
             <div class="logo-and-social">
                 <a class="skillsoft-logo" href="#">NMC<b>Restaurant.</b></a>
-                <p class="company-des">Discover NMCRestaurant, where delicious flavors and friendly service come together to create memorable dining experiences. Our restaurant offers a delightful menu of fresh, locally sourced dishes that will satisfy any palate. Join us for a meal and let us treat you to an unforgettable culinary journey. Welcome to NMCRestaurant.</p>
+                <p class="company-des">Discover NMCRestaurant, where delicious flavors and friendly service come together to create memorable dining experiences.  Welcome to NMCRestaurant.</p>
                 <div class="social-icon">
                     <div class="facebook social-odd">
                         <a href="" target="_NEW"><i class="fab fa-facebook-f"></i></a>

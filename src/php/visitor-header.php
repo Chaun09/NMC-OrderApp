@@ -41,17 +41,7 @@
                         <!--Form to collect data when login, username and password-->
                         
                         <form class="signin-form" method="POST" id="signup">
-                            <div class="selection">
-                                <div class="selector-div">
-                                    <input type="radio" id="roleStud" class ="role-selection" name="roleSelector" value="student" checked>
-                                    <label class="selection-label" for="roleStud">Student</label>
-                                </div>
-                                <div class=seperateline-stu-and-tea></div>
-                                <div class="selector-div">
-                                    <input type="radio" id="roleTea" class ="role-selection" name="roleSelector" value="teacher">
-                                    <label class="selection-label" for="roleTea">Teacher</label>
-                                </div>
-                            </div>
+                           
                                 <div class="acc-details">
                                     <i class="fas fa-user-circle"></i>
                                     <input class="acc-username" type="text" id="student" name="log_username" placeholder="Username" required >
@@ -74,11 +64,7 @@
                             <span>Forgot Password?<a href="forgot-password.php">&nbspReset your Password</a></span>
                         </div>
                         <hr class="divide-line-signin">
-                        <div class="have-account">
-                            <label for="have-an-account">
-                                Don't have an account? <a class="signup-btn" href="#" id="signup-btn">&nbspSign Up</a>
-                            </label>
-                        </div>
+                    
                     </div>
                 </div>
             </div>
@@ -87,56 +73,54 @@
                 <!-- Modal content -->
                 <div class="modal-content">
                     <span class="signup-close">&times;</span>
-                    <p>Choose your account type</p>
-                    <div class="signup-option">
-                        <div class="left-teac-ops">
-                            <a class="teac-signup-link" href="teacher-signup.php">
-                                <div class="teac-card">
-                                    <div class="teac-img">
-                                        <img src="Images/teac-signup.png">
-                                    </div>
-                                    <div class="teac-title">
-                                        <h2>Teacher</h2>
-                                    </div>
+                    <p>Sign Up</p>
+                    <div class="account-login-information">
+                        <!--Form to collect data when login, username and password-->
+                        
+                        <form class="signup-form" method="POST" id="signup">
+                           
+                                <div class="acc-details">
+                                    <i class="fas fa-user-circle"></i>
+                                    <input class="acc-username" type="text" id="student" name="signup_username" placeholder="Username" required >
                                 </div>
-                            </a>
-                        </div>
-                        <div class="right-stud-ops">
-                            <a class="stud-signup-link" href="student-signup.php">
-                                <div class="stud-card">
-                                    <div class="stud-img">
-                                        <img src="Images/stud-signup.png">
-                                    </div>
-                                    <div class="stud-title">
-                                        <h2>Student</h2>
-                                    </div>
+                                <div class="acc-details">
+                                    <i class="fas fa-unlock-alt icon"></i>
+                                    <input class="acc-password" type="password" id="password" name="signup_password" placeholder="Password" required >
                                 </div>
-                            </a>
-                        </div>
+                                <div class="acc-details">
+                                    <i class="fas fa-unlock-alt icon"></i>
+                                    <input class="acc-password" type="password" id="password" name="signup_password_again" placeholder="Password Again" required >
+                                </div>
+                                <div class="acc-details">
+                                    <i class="fas fa-user-circle"></i>
+                                    <input class="acc-username" type="text" id="student" name="signup_username" placeholder="Fullname" required >
+                                </div>
+                                <div class="acc-details">
+                                    <i class="fas fa-user-circle"></i>
+                                    <input class="acc-username" type="email" id="student" name="signup_username" placeholder="Email" required >
+                                </div>
+                              
+                                    <div class="showpass">
+                                        <input type="checkbox" id="showPass">
+                                        <label for="terms">
+                                            View your password
+                                        </label>
+                                    </div>
+                                <div class="sign-in-btn">
+                                    <input type="submit" name="Sign Up" value="Sign Up">
+                                </div>
+                        </form>
+                        
+                        <hr class="divide-line-signin">
+                     
                     </div>
-                    <hr class="divide-line">
-                    <p class="have-an-account" style="text-align:center;">
-                        Already have an account?<a href="#" class="signin-btn">&nbspSign In</a>
-                    </p>
                 </div>
             </div>
+
+          
         </section>
 
-        <div class="" id="dropdown-list">
-            <a class="skillsoft-logo" href="index.php">SkillSoft.</a>
-            <ul class="main-menu">
-                <li><a href="student-quiz.php" name="all_quiz">Quizzes <i class="fas fa-caret-down"></i></a>
-                    <ul class="sub-menu" style="z-index:50;">
-                        <li><a href="show-quiz.php?cat=Business">Business Quiz</a></li>
-                        <li><a href="show-quiz.php?cat=Design">Design Quiz</a></li>
-                        <li><a href="show-quiz.php?cat=IT">IT Quiz</a></li>
-                    </ul>
-                </li>
-                <li><a href="student-forum.php">Forum</a></li>
-                <li><a href="visitor-faq.php">FAQ</a></li>
-                <li><a href="visitor-aboutus.php">About Us</a></li>
-            </ul>
-        </div>
+       
 
         <!--Modal Box for Sign In-->
         <script>

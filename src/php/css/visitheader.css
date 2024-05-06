@@ -165,6 +165,9 @@ body {
         margin: 10px 50px;
     }
 }
+.signup-modal {
+    transform: translate(0%,-7%);
+}
 
 @media screen and (min-width: 850px) {
     #dropdown-list a {
