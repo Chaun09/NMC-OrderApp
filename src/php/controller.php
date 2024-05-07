@@ -27,16 +27,16 @@ $teac_confirm_password  = "";
 $image                  = "";
 
 // When student clicks on the sign up button
-if (isset($_POST['stud-reg'])) {
-    $stud_first_name        = $_POST['stud_first_name'];
-    $stud_last_name         = $_POST['stud_last_name'];
-    $stud_username          = $_POST['stud_username'];
-    $stud_email             = $_POST['stud_email'];
-    $stud_password          = $_POST['stud_password'];
-    $stud_confirm_password  = $_POST['stud_confirm_password'];
+if (isset($_POST['SignUp'])) {
+    $stud_fullname          = $_POST['signup_username_full'];
+    $stud_username          = $_POST['signup_username'];
+    $stud_email             = $_POST['signup_email'];
+    $stud_password          = $_POST['signup_password'];
+    $stud_confirm_password  = $_POST['signup_password_again'];
+    // $stud_role_id = $_POST['signup_role_id'];
     
-    $emailQuery = "SELECT * FROM student WHERE stud_email=? LIMIT 1";
-    $stmt = $conn->prepare($emailQuery);
+    $emailQuery = "SELECT * FROM users WHERE email=? LIMIT 1";
+    $stmt = $link->prepare($emailQuery);
     $stmt->bind_param('s',$stud_email);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -48,8 +48,8 @@ if (isset($_POST['stud-reg'])) {
         return false;
     }
     
-    $usernameQuery = "SELECT * FROM student WHERE stud_username=? LIMIT 1";
-    $stmt = $conn->prepare($usernameQuery);
+    $usernameQuery = "SELECT * FROM users WHERE username=? LIMIT 1";
+    $stmt = $link->prepare($usernameQuery);
     $stmt->bind_param('s',$stud_username);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -67,104 +67,23 @@ if (isset($_POST['stud-reg'])) {
         $token = bin2hex(random_bytes(50));
         $verified = false; 
 
-        $sql = "INSERT INTO student (stud_first_name, stud_last_name, stud_username, stud_email, hashed_password, verified, token) VALUES (?,?,?,?,?,?,?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param('sssssbs',$stud_first_name, $stud_last_name, $stud_username, $stud_email, $stud_password, $verified, $token);
-        
-        if ($stmt->execute()) 
-        {
-            // login user
-            $user_id = $conn->insert_id; 
-            $_SESSION['id'] = $user_id;
-            $_SESSION['stud_username'] = $stud_username;
-            $_SESSION['stud_email'] = $stud_email;
+        $sql = "INSERT INTO users (username, password, email, full_name) VALUES ('$stud_username', '$stud_password', '$stud_email' , '$stud_fullname')";
+        $result = mysqli_query($link,$sql);
 
-        
-
-                        // flash message
-            echo "<script type='text/javascript'>alert('dang nhap thanh cong');
+            echo "<script type='text/javascript'>alert('Tao Tai Khoan Thanh Cong');
             window.location='index.php';
             </script>";
             exit();
-        } else {
-            echo "<script type='text/javascript'>alert('dang nhap thanh cong');
-            window.location='index.php';
-            </script>";
-        }
+                            
+        
+
+        
+
+       
     }
 
 }
 
-// When teacher clicks on the sign up button
-if (isset($_POST['teach-reg'])) {
-    $teac_first_name        = $_POST['teac_first_name'];
-    $teac_last_name         = $_POST['teac_last_name'];
-    $teac_username          = $_POST['teac_username'];
-    $teac_email             = $_POST['teac_email'];
-    $teac_password          = $_POST['teac_password'];
-    $teac_confirm_password  = $_POST['teac_confirm_password'];
-    $teac_status            = "Not Verified";
-    
-    if (isset($_FILES['image'])) {
-        $target_dir = "images/";
-        $target_file = $target_dir.basename($_FILES['image']['name']);
-        move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
-        $image = $_FILES['image']['name'];
-    }
-    
-    $emailQuery = "SELECT * FROM teacher WHERE teac_email=? LIMIT 1";
-    $stmt = $conn->prepare($emailQuery);
-    $stmt->bind_param('s',$teac_email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $userCount = $result->num_rows;
-    $stmt->close();
-
-    if($userCount > 0) {
-        echo '<script>alert("Email already exists, please try a different email!")
-        </script>';
-        return false;
-    }
-    
-    $usernameQuery = "SELECT * FROM teacher WHERE teac_username=? LIMIT 1";
-    $stmt = $conn->prepare($usernameQuery);
-    $stmt->bind_param('s',$teac_username);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $userCount = $result->num_rows;
-    $stmt->close();
-
-    if($userCount > 0) {
-        echo '<script>alert("Username already exists, please try a different username!")</script>';
-        return false;
-    }
-
-    if (count($errors) === 0) {
-        $teac_password1 = $teac_password;
-
-        $sql = "INSERT INTO teacher (teac_username, teac_password, teac_email, teac_first_name, teac_last_name, teac_edu_proof, teac_status) 
-        VALUES (?,?,?,?,?,?,?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param('sssssss',$teac_username, $teac_password1, $teac_email, $teac_first_name, $teac_last_name, $image, $teac_status);
-        
-        if ($stmt->execute()) {
-            // login user
-            $teach_id = $conn->insert_id; 
-            $_SESSION['teach_id'] = $teach_id;
-            $_SESSION['teac_username'] = $teac_username;
-            $_SESSION['teac_email'] = $teac_email;
-
-            echo "<script type='text/javascript'>alert('Your account request is now pending for approval from admin!');
-            window.location='teacher-quiz.php';
-            </script>";
-            exit();
-        } else {
-            echo "<script type='text/javascript'>alert('Error!');
-            window.location='teacher-quiz.php';
-            </script>";
-        }
-    }
-}
 
 
 // When student clicks on the login button 

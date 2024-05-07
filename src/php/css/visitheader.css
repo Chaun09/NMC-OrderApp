@@ -166,7 +166,7 @@ body {
     }
 }
 .signup-modal {
-    transform: translate(0%,-7%);
+    transform: translate(0%,-7.5%);
 }
 
 @media screen and (min-width: 850px) {

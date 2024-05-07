@@ -5,10 +5,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/visitheader.css">
+        <link rel="stylesheet" href="css/signup.css">
         <link rel="icon" type="image/png" href="../images/icon copy.png">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/8e94eefdff.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
         <section class="top-nav-bar" style="z-index:50;" id="top-nav-bar">
@@ -85,29 +88,30 @@
                                 </div>
                                 <div class="acc-details">
                                     <i class="fas fa-unlock-alt icon"></i>
-                                    <input class="acc-password" type="password" id="password" name="signup_password" placeholder="Password" required >
+                                    <input class="acc-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" id="password" name="signup_password" placeholder="Password" required >
+                                
                                 </div>
                                 <div class="acc-details">
                                     <i class="fas fa-unlock-alt icon"></i>
-                                    <input class="acc-password" type="password" id="password" name="signup_password_again" placeholder="Password Again" required >
+                                    <input class="acc-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" id="password" name="signup_password_again" placeholder="Password Again" required >
+                                  
                                 </div>
                                 <div class="acc-details">
                                     <i class="fas fa-user-circle"></i>
-                                    <input class="acc-username" type="text" id="student" name="signup_username" placeholder="Fullname" required >
+                                    <input class="acc-username" type="text" id="student" name="signup_username_full" placeholder="Fullname" required >
                                 </div>
                                 <div class="acc-details">
                                     <i class="fas fa-user-circle"></i>
-                                    <input class="acc-username" type="email" id="student" name="signup_username" placeholder="Email" required >
+                                    <input class="acc-username" type="email" id="student" name="signup_email" placeholder="Email" required >
                                 </div>
+
+                                <!-- <div class="acc-details">
+                                    <i class="fas fa-user-circle"></i>
+                                    <input class="acc-username" type="int" id="student" name="signup_role_id" placeholder="Role_id" required >
+                                </div> -->
                               
-                                    <div class="showpass">
-                                        <input type="checkbox" id="showPass">
-                                        <label for="terms">
-                                            View your password
-                                        </label>
-                                    </div>
                                 <div class="sign-in-btn">
-                                    <input type="submit" name="Sign Up" value="Sign Up">
+                                    <input type="submit" name="SignUp" value="Sign Up">
                                 </div>
                         </form>
                         
@@ -186,6 +190,8 @@
         });
 
         </script>
+
+
     </body>
 </html>
 
