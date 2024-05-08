@@ -61,7 +61,19 @@ if (isset($_POST['SignUp'])) {
         return false;
     }
 
+
     if (count($errors) === 0) 
+
+    {
+   
+    if($stud_password!=$stud_confirm_password)
+    {
+        echo "<script type='text/javascript'>alert('Password does not match !');
+        window.location='index.php';
+        </script>";
+
+    }
+    else 
     {
         $stud_password1 = $stud_password;
         $token = bin2hex(random_bytes(50));
@@ -75,7 +87,7 @@ if (isset($_POST['SignUp'])) {
             </script>";
             exit();
                             
-        
+    }   
 
         
 
@@ -100,7 +112,8 @@ if (isset($_POST['stud_login'])) {
             $result = mysqli_query($link, $sql);
          
 
-            if (mysqli_num_rows($result) == 1) {
+            if (mysqli_num_rows($result) == 1) 
+            {
                 // login success
                 $_SESSION['id'] = $user['user_id'];
                 $_SESSION['stud_email'] = $user['email'];
@@ -111,6 +124,11 @@ if (isset($_POST['stud_login'])) {
                 window.location='verification.php';
                 </script>";
                 exit();
+            }
+            else {
+                echo "<script type='text/javascript'>alert('UserName Does Not Exists!');
+                window.location='index.php';
+                </script>";
             }
 
            

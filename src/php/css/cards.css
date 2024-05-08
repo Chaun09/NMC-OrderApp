@@ -4,6 +4,43 @@
 .quiz-link{
     text-decoration: none;
 }
+.search-bar {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 15px 10px 20px;
+    border: 1px solid #50514F;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+}
+#search-btn {
+    font-size: 18px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+
+#search-btn:hover {
+    color: #5fa022;
+}
+#search-input {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 12px;
+    color: #50514F;
+    outline: none;
+    border: none;
+}
+
+#search-input::-webkit-input-placeholder {
+    font-size: 18px;
+}
 
 .quiz-card {
     background-color: #FFFFFF;
