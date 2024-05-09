@@ -9,6 +9,7 @@
         <link rel="icon" type="image/png" href="../images/icon copy.png">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/8e94eefdff.js" crossorigin="anonymous"></script>
+        <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
@@ -81,10 +82,10 @@
 
             <div id="signup-modal" class="signup-modal">
                 <!-- Modal content -->
-                <div class="modal-content">
+                <div class="modal-content"  id="signup">
                     <span class="signup-close">&times;</span>
                     <p>Sign Up</p>
-                    <div class="account-login-information">
+                    <div class="account-login-information" id="signup">
                         <!--Form to collect data when login, username and password-->
                         
                         <form class="signup-form" method="POST" id="signup">
@@ -117,6 +118,8 @@
                                             View your password
                                         </label>
                                 </div>
+                             
+                               
                                 <script>
                                              
                                              $(document).ready(function() {
@@ -125,21 +128,27 @@
                                                  });
                                              });
                                 </script>
+                                
+          
 
-                                <!-- <div class="acc-details">
-                                    <i class="fas fa-user-circle"></i>
-                                    <input class="acc-username" type="int" id="student" name="signup_role_id" placeholder="Role_id" required >
-                                </div> -->
+                              
                               
                                 <div class="sign-in-btn">
                                     <input type="submit" name="SignUp" value="Sign Up">
                                 </div>
+                                
+                      
                         </form>
+                      
+                       
                         
                         <hr class="divide-line-signin">
                      
                     </div>
-                </div>
+                  
+                 
+                </div>  
+              
             </div>
 
           
@@ -149,6 +158,8 @@
 
         <!--Modal Box for Sign In-->
         <script>
+
+        
         const targetDiv = document.getElementById("dropdown-list");
         const btn = document.getElementById("menu-btn");
         btn.onclick = function () {
@@ -173,6 +184,7 @@
         var signupmodal = document.getElementById("signup-modal");
         var signupbtn = document.getElementById("signup-btn");
         var signupspan = document.getElementsByClassName("signup-close")[0];
+       
         signupbtn.onclick = function() {
             signupmodal.style.display = "block";
         }

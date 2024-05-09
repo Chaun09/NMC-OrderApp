@@ -22,27 +22,45 @@
    
     <body>
         <?php include("visitor-header.php");?>
-       
+     <?php  include("config.php");?>
         
 
 
         <div class="quiz-list-column" id="quiz-list-column"> 
         <div style="display:flex;">   
+      
+     
         <div class="search-bar">
-                <form method="GET" action="" autocomplete="off">
-                    <input id="search-input" name="search" type="text" placeholder="Search food here...">
-                    <input id="real-submit" type="submit" hidden>
-                    <button id="search-btn" type="submit" name="submit" value="Search"><i class="fas fa-search"></i></button>
+                <form method="GET" action="">
+                    <input id="search-input" name="search1" type="text" placeholder="Search food here...">
+                    
+                    <button id="search-btn" type="submit" name="submit1" value="Search"><i class="fas fa-search"></i></button>
                 </form>
+                <?php
+  $query = 'SELECT * FROM products WHERE country = "vietnam" ORDER BY RAND() LIMIT 4';
+  $re = mysqli_query($link, $query);
+
+
+if (isset($_GET['submit1'])) {
+  $searchTerm = $_GET['search1'];
+  $sql1 = "SELECT * FROM products WHERE country = 'vietnam' AND product_name like '%$searchTerm%' ORDER BY RAND() LIMIT 4 ";
+
+  $re = $link->query($sql1);
+ 
+
+
+}
+
+
+?>
         </div>
         <h1 style="transform:translate(53%,-50%); text-align: center;">VIETNAMESE FOOD</h1>
         </div>
             <div class="quiz-box">
                 <?php
-                include("config.php");
-                $sql = ("select * from products where country = 'vietnam'");
-                $result = mysqli_query($link, $sql);
-                while ($row = mysqli_fetch_array($result))
+            
+
+                while ($row = mysqli_fetch_array($re))
                 {
                 ?>
                 <a class="quiz-link">
