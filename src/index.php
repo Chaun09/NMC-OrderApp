@@ -1,3 +1,14 @@
+<?php 
+session_start();
+include 'php/config.php';
+if(!isset($_SESSION['id'])){
+  echo '<script>alert("You must log in to your account first.")</script>';
+  echo '<script>location.href="php/index.php"</script>';
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +19,7 @@
 <link rel="stylesheet" href="php/css/chatbot.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/slider.css">
+
 <script src="js/jquery.js"></script>
 <script src="js/jquery-migrate-1.1.1.js"></script>
 <script src="js/superfish.js"></script>
@@ -15,6 +27,8 @@
 <script src="js/sForm.js"></script>
 <script src="js/jquery.carouFredSel-6.1.0-packed.js"></script>
 <script src="js/tms-0.4.1.js"></script>
+<script src="https://kit.fontawesome.com/8e94eefdff.js" crossorigin="anonymous"></script>
+
 
 <script>
 $(window).load(function () {
@@ -92,7 +106,7 @@ $(window).load(function () {
   <header>
     <div class="container_12">
       <div class="grid_12">
-        <h1><a href="index.html"><img src="images/" alt=""></a></h1>
+        <h1><a href="index.php"><img src="images/" alt=""></a></h1>
         <style>
           .grid_12 img {
             height: 70px;
@@ -103,14 +117,14 @@ $(window).load(function () {
         <div class="menu_block">
           <nav>
             <ul class="sf-menu">
-              <li class="current"><a href="index.html">Home</a></li>
+              <li class="current"><a href="index.php">Home</a></li>
               <li class="with_ul"><a href="about-us.html">About Us</a>
                 <ul>
                   <li><a href="#">Cuisine</a></li>
                   <li><a href="#">Good rest</a></li>
                   <li><a href="#">Services</a></li>
                 </ul>
-              </li>+++
+              </li>
               <style>
                 .dropmenu ul li{
                   font-size: 5px;
@@ -142,7 +156,22 @@ $(window).load(function () {
               <li><a href="portfolio.html">Moments</a></li>
               <li><a href="news.html">News</a></li>
               <li><a href="contacts.html">Contacts</a></li>
-              <li><a href="cart.html">Cart</a></li>
+              <li><a href="">Cart</a></li>
+              <?php 
+              $sql = "select * from users";
+              $result = mysqli_query($link,$sql);
+              $row = mysqli_fetch_array($result);
+              ?>
+              <li class="dropmenu"><a href="php/user-profile.php"> My Account <i class="fas fa-caret-down"></i></a>
+
+                            <ul>
+                                <li><a href="student-profile.php" title="Profile">Profile</a></li>
+                                <li><a href="student-accsetting.php" title="Settings">Settings</a></li> 
+                                
+                                
+                            </ul>
+              </li>
+            
            
           
               
@@ -150,11 +179,20 @@ $(window).load(function () {
 
             </ul>
           </nav>
+         
+                
+              
+                    
+                       
+                    
+               
+            
           <div class="clear"></div>
         </div>
         <div class="clear"></div>
       </div>
     </div>
+    
   </header>
  
   <div class="slider-relative">
@@ -557,7 +595,7 @@ $(window).load(function () {
            </div>
           <nav>
             <ul>
-              <li class="current"><a href="index.html">Home</a></li>
+              <li class="current"><a href="index.php">Home</a></li>
               <li><a href="about-us.html">About Us</a></li>
               <li><a href="menu.html">Menu</a></li>
               <li><a href="portfolio.html">Moments</a></li>

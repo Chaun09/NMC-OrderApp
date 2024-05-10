@@ -114,6 +114,7 @@ if (isset($_POST['stud_login'])) {
 
             if (mysqli_num_rows($result) == 1) 
             {
+                $user = mysqli_fetch_array($result);
                 // login success
                 $_SESSION['id'] = $user['user_id'];
                 $_SESSION['stud_email'] = $user['email'];

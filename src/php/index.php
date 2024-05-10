@@ -90,17 +90,31 @@ if (isset($_GET['submit1'])) {
         <div class="search-bar">
                 <form method="GET" action="" autocomplete="off">
                     <input id="search-input" name="search" type="text" placeholder="Search food here...">
-                    <input id="real-submit" type="submit" hidden>
+                   
                     <button id="search-btn" type="submit" name="submit" value="Search"><i class="fas fa-search"></i></button>
                 </form>
         </div>
+        <?php
+           
+                $sql = "SELECT * FROM products WHERE country = 'euro'  ORDER BY RAND() LIMIT 4" ;
+                $result = mysqli_query($link, $sql);
+
+                if (isset($_GET['submit'])) {
+                    $searchTerm = $_GET['search'];
+                    $sql1 = "SELECT * FROM products WHERE country = 'euro' AND product_name like '%$searchTerm%' ORDER BY RAND() LIMIT 4 ";
+                  
+                    $result = $link->query($sql1);
+                   
+                  
+                  
+                  }
+                
+        ?>
         <h1 style="transform:translate(60%,-50%); text-align: center;">EUROPEAN FOOD</h1>
         </div>
             <div class="quiz-box">
                 <?php
-                include("config.php");
-                $sql = ("select * from products where country = 'euro'");
-                $result = mysqli_query($link, $sql);
+            
                 while ($row = mysqli_fetch_array($result)){
                 ?>
                 <a class="quiz-link">

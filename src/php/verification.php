@@ -14,7 +14,7 @@ if (isset($_GET['password-token'])) {
 }
 
 if (!isset($_SESSION['id'])) {
-    header('location: ../index.html');
+    header('location: index.php');
     exit();
 }
 ?>
@@ -26,7 +26,7 @@ if (!isset($_SESSION['id'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="stylesheets/student-signup.css">
         <link rel="icon" type="image/png" href="Images/skillsoft-favicon.png">
-        <title>Student Sign Up Page</title>
+        <title>NMC Restaurant</title>
     </head>
     <body>
      
@@ -35,11 +35,11 @@ if (!isset($_SESSION['id'])) {
             <section class="registration-form">
                 <div style="margin: auto; width: 60%; border: 3px solid #FA8334; border-radius: 15px; padding: 80px; margin-bottom: 100px;">
                  
-                    <?php if(!$_SESSION['verified']): ?>
+               
                         <?php echo '<script>alert("Your account has been successfully verified!");
-                        window.location="../index.html";   
+                        window.location="../index.php";   
                         </script>'; ?>
-                    <?php endif; ?>
+                   
                 </div>
             </section>
         </div>
