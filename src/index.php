@@ -157,16 +157,12 @@ $(window).load(function () {
               <li><a href="news.html">News</a></li>
               <li><a href="contacts.html">Contacts</a></li>
               <li><a href="">Cart</a></li>
-              <?php 
-              $sql = "select * from users";
-              $result = mysqli_query($link,$sql);
-              $row = mysqli_fetch_array($result);
-              ?>
+            
               <li class="dropmenu"><a href="php/user-profile.php"> My Account <i class="fas fa-caret-down"></i></a>
 
                             <ul>
-                                <li><a href="student-profile.php" title="Profile">Profile</a></li>
-                                <li><a href="student-accsetting.php" title="Settings">Settings</a></li> 
+                                <li><a href="php/user-profile.php" title="Profile">Profile</a></li>
+                                <li><a href="php/user-accsetting.php" title="Settings">Settings</a></li> 
                                 
                                 
                             </ul>

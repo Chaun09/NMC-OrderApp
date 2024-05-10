@@ -33,13 +33,14 @@ $sid = $row['user_id'];
                         </div>
                         <div class="acc-detail">
                             <h2>
+                                UserName: <?php echo $row['username'];?>
+                            </h2>
+                            <h2>
                                 FullName: <?php echo $row['full_name'];?>
                             </h2>
                           
-                            <h2>
-                                Email: <?php echo $row['email'];?>
-                            </h2>
-                            <button onclick="location.href='php/user-prosetting.php'">Edit Profile</button>
+                           
+                            <button onclick="location.href='user-prosetting.php'">Edit Profile</button>
                         </div>
                     </div>
                     <div class="right-column-right">
