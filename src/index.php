@@ -1,10 +1,24 @@
 <?php 
 session_start();
-include 'php/config.php';
-if(!isset($_SESSION['id'])){
+include 'php/config.php'; 
+
+$userid = $_SESSION['id'];
+if(!isset($_SESSION['id']))
+{
   echo '<script>alert("You must log in to your account first.")</script>';
   echo '<script>location.href="php/index.php"</script>';
 }
+
+if(isset($_SESSION['id']))
+{
+ 
+  $sql = "SELECT * FROM users WHERE user_id = '$userid'";
+  $result = mysqli_query($link, $sql);
+  $row = mysqli_fetch_array($result);
+  echo '<script>alert("Welcome '.$row['full_name'].' To NMC Restaurant. We Hope You Have A Nice Day  ❤️ ❤️ ❤️")</script>';
+}
+
+
 
 ?>
 
@@ -163,9 +177,15 @@ $(window).load(function () {
                             <ul>
                                 <li><a href="php/user-profile.php" title="Profile">Profile</a></li>
                                 <li><a href="php/user-accsetting.php" title="Settings">Settings</a></li> 
-                                
+                                <li><a href="php/logout.php" title="Logout">Logout&nbsp;<i class="fas fa-power-off"></i></a></li> 
                                 
                             </ul>
+                            <style>
+                              i {
+                                transform: translate(0%,15%);
+                              }
+                            </style>
+                            
               </li>
             
            

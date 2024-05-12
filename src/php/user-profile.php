@@ -29,7 +29,7 @@ $sid = $row['user_id'];
                 <div class="account-info">
                     <div class="left-column-info">
                         <div class="acc-pic">
-                            <img src="../images/<?php echo $row['image'];?>" alt="profile-pic">
+                            <img src="../images/<?php echo $row['image'];?>" >
                         </div>
                         <div class="acc-detail">
                             <h2>
