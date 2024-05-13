@@ -31,7 +31,7 @@
                 <div class="right-nav" id="right-nav">
                     <a id="signin-btn" class="sign-in" href="#">Sign In</a>
                     <a id="signup-btn" class="sign-up" href="#">Sign Up</a>
-                    <a id="signup-btn" class="sign-up" href="admin/admin-login-page.php">Admin Log In</a>
+                    <a id="signup-btn" class="sign-up" href="../admin/index.php">Admin Log In</a>
                 </div>
 
             <div id="signin-modal" class="signin-modal">

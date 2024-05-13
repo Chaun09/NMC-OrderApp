@@ -170,7 +170,7 @@ $(window).load(function () {
               <li><a href="portfolio.html">Moments</a></li>
               <li><a href="news.html">News</a></li>
               <li><a href="contacts.html">Contacts</a></li>
-              <li><a href="">Cart</a></li>
+              <li><a href="php/cart.php">Cart</a></li>
             
               <li class="dropmenu"><a href="php/user-profile.php"> My Account <i class="fas fa-caret-down"></i></a>
 

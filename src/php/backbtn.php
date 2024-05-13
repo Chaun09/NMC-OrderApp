@@ -16,7 +16,7 @@
             line-height: 25px;
             outline: none;
             border: none;
-            background-color: #FA8334;
+            background-color: #5fa022;
             color: #fff;
             font-size: 18px;
             cursor: pointer;
@@ -30,8 +30,8 @@
         }
 
         #backBtn:hover {
-            background-color: #FFFFFF;
-            color: #FA8334;
+            background-color: #5fa022;
+           
             transition: 0.6s;
         }
     </style>
