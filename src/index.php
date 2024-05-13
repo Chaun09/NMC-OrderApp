@@ -15,7 +15,7 @@ if(isset($_SESSION['id']))
   $sql = "SELECT * FROM users WHERE user_id = '$userid'";
   $result = mysqli_query($link, $sql);
   $row = mysqli_fetch_array($result);
-  echo '<script>alert("Welcome '.$row['full_name'].' To NMC Restaurant. We Hope You Have A Nice Day  ❤️ ❤️ ❤️")</script>';
+  echo '<script>alert("Welcome '.$row['full_name'].' To NMC Restaurant. We Hope You Have A Nice Day And Best Experience ❤️ ❤️ ❤️")</script>';
 }
 
 
