@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include("../connection/connect.php");
+include("../php/config.php");
 error_reporting(0);
 session_start();
 
@@ -13,7 +13,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>All Users</title>
+    <title> Admin Panel </title>
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -30,7 +30,7 @@ session_start();
          <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
             <div class="navbar-header">
-                    <a class="navbar-brand" href="dashboard.php">
+                    <a class="navbar-brand" href="dash.php">
                         
                         <span><img src="images/icn.png" alt="homepage" class="dark-logo" /></span>
                     </a>
@@ -85,8 +85,6 @@ session_start();
                    <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
-                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-                        <li class="nav-label">Log</li>
                         <li> <a href="all_users.php">  <span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -114,6 +112,7 @@ session_start();
         </div>
 
         <div class="page-wrapper">
+            
      
             <div class="container-fluid">
                 <div class="row">
@@ -129,22 +128,22 @@ session_start();
                                     <table id="myTable" class="table table-bordered table-striped table-hover">
                                     <thead class="thead-dark">
                                             <tr>
-                                                <th>Username</th>
-                                                <th>FirstName</th>
-                                                <th>LastName</th>
+                                                <th>UseName</th>
+                                                <th>FullName</th>
+                                            
                                                 <th>Email</th>
-                                                <th>Phone</th>
-												<th>Address</th>												
-												 <th>Reg-Date</th>
-												  <th>Action</th>
+                                                <th>PhoneNumber</th>
+												<!-- <th>Address</th>												
+												<th>Reg-Date</th>
+												<th>Action</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
                                            
 											
 											<?php
-												$sql="SELECT * FROM users order by u_id desc";
-												$query=mysqli_query($db,$sql);
+												$sql="SELECT * FROM users order by user_id desc";
+												$query=mysqli_query($link,$sql);
 												
 													if(!mysqli_num_rows($query) > 0 )
 														{
@@ -158,12 +157,12 @@ session_start();
 																				
 																				
 																					echo ' <tr><td>'.$rows['username'].'</td>
-																								<td>'.$rows['f_name'].'</td>
-																								<td>'.$rows['l_name'].'</td>
+																								<td>'.$rows['full_name'].'</td>
 																								<td>'.$rows['email'].'</td>
-																								<td>'.$rows['phone'].'</td>
-																								<td>'.$rows['address'].'</td>																								
-																								<td>'.$rows['date'].'</td>
+																								<td>'.$rows['PhoneNumber'].'</td>
+																								// <td>'.$rows['phone'].'</td>
+																								// <td>'.$rows['address'].'</td>																								
+																								// <td>'.$rows['date'].'</td>
 																									 <td><a href="delete_users.php?user_del='.$rows['u_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
 																									 <a href="update_users.php?user_upd='.$rows['u_id'].'" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
 																									</td></tr>';

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include("../connection/connect.php");
+include("../php/config.php");
 error_reporting(0);
 session_start();
 
@@ -16,19 +16,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 			
 		  
 		
-		
-		if(empty($_POST['d_name'])||empty($_POST['about'])||$_POST['price']==''||$_POST['res_name']=='')
-		{	
-											$error = 	'<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>All fields Must be Fillup!</strong>
-															</div>';
-									
-		
-								
-		}
-	else
-		{
+	
 		
 				$fname = $_FILES['file']['name'];
 								$temp = $_FILES['file']['tmp_name'];
@@ -37,7 +25,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 								$extension = strtolower(end($extension));  
 								$fnew = uniqid().'.'.$extension;
    
-								$store = "Res_img/dishes/".basename($fnew);                     
+								$store = "../images/".basename($fnew);                     
 	
 					if($extension == 'jpg'||$extension == 'png'||$extension == 'gif' )
 					{        
@@ -52,23 +40,22 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 	   
 										}
 		
-									else
-										{
+									
 												
 												
 												
 				                                 
-												$sql = "update dishes set rs_id='$_POST[res_name]',title='$_POST[d_name]',slogan='$_POST[about]',price='$_POST[price]',img='$fnew' where d_id='$_GET[menu_upd]'";
-												mysqli_query($db, $sql); 
+												$sql = "update products set product_name='$_POST[d_name]',description='$_POST[about]',price='$_POST[price]',img='$fnew', country='$_POST[country]', stock_quantity='$_POST[quantity]' where product_id='$_GET[menu_upd]'";
+												mysqli_query($link, $sql); 
 												move_uploaded_file($temp, $store);
 			  
-													$success = 	'<div class="alert alert-success alert-dismissible fade show">
+												$success = 	'<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>Record Updated!</strong>
 															</div>';
                 
 	
-										}
+										
 					}
 					              
 	   
@@ -81,7 +68,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 	
 	
 
-}
+
 
 
 
@@ -149,8 +136,6 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                    <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
-                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-                        <li class="nav-label">Log</li>
                         <li> <a href="all_users.php">  <span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -194,13 +179,13 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 					    <div class="col-lg-12">
                         <div class="card card-outline-primary">
                             <div class="card-header">
-                                <h4 class="m-b-0 text-white">Add Menu to Restaurant</h4>
+                                <h4 class="m-b-0 text-white">Update Menu Restaurant</h4>
                             </div>
                             <div class="card-body">
                                 <form action='' method='post'  enctype="multipart/form-data">
                                     <div class="form-body">
-                                        <?php $qml ="select * from dishes where d_id='$_GET[menu_upd]'";
-													$rest=mysqli_query($db, $qml); 
+                                        <?php $qml ="select * from products where product_id='$_GET[menu_upd]'";
+													$rest=mysqli_query($link, $qml); 
 													$roww=mysqli_fetch_array($rest);
 														?>
                                         <hr>
@@ -208,16 +193,18 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Dish Name</label>
-                                                    <input type="text" name="d_name" value="<?php echo $roww['title'];?>" class="form-control" placeholder="Morzirella">
+                                                    <input type="text" name="d_name" value="<?php echo $roww['product_name'];?>" class="form-control" placeholder="Morzirella">
                                                    </div>
                                             </div>
                                 
                                             <div class="col-md-6">
                                                 <div class="form-group has-danger">
                                                     <label class="control-label">About</label>
-                                                    <input type="text" name="about" value="<?php echo $roww['slogan'];?>" class="form-control form-control-danger" placeholder="slogan">
+                                                    <input type="text" name="about" value="<?php echo $roww['description'];?>" class="form-control form-control-danger" placeholder="slogan">
                                                     </div>
                                             </div>
+
+                                         
                              
                                         </div>
                                  
@@ -235,6 +222,20 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                                     <input type="file" name="file"  id="lastName" class="form-control form-control-danger" placeholder="12n">
                                                     </div>
                                             </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Quantity </label>
+                                                    <input type="text" name="quantity" value="<?php echo $roww['stock_quantity'];?>"  class="form-control">
+                                                   </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                                <div class="form-group has-danger">
+                                                    <label class="control-label">Country</label>
+                                                    <input type="text" name="country" value="<?php echo $roww['country'];?>" class="form-control form-control-danger" placeholder="slogan">
+                                                    </div>
                                         </div>
                                     
 										
@@ -247,22 +248,6 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 											
 											
 											
-											 <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Select Category</label>
-													<select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
-                                                        <option>--Select Restaurant--</option>
-                                                 <?php $ssql ="select * from restaurant";
-													$res=mysqli_query($db, $ssql); 
-													while($row=mysqli_fetch_array($res))  
-													{
-                                                       echo' <option value="'.$row['rs_id'].'">'.$row['title'].'</option>';;
-													}  
-                                                 
-													?> 
-													 </select>
-                                                </div>
-                                            </div>
 											
 											
 											

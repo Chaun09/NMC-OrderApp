@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include("../connection/connect.php");
+include("../php/config.php");
 error_reporting(0);
 session_start();
 
@@ -85,8 +85,6 @@ session_start();
                    <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
-                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-                        <li class="nav-label">Log</li>
                         <li> <a href="all_users.php">  <span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -139,11 +137,13 @@ session_start();
                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead class="thead-dark">
                                             <tr>
-											 <th>Restaurant</th>
+											 
                                                 <th>Dish</th>
                                                 <th>Description</th>
                                                 <th>Price</th>
+                                                <th>Stock</th>
                                                 <th>Image</th>
+                                                <th>Country</th>
                                                <th>Action</th>	  
                                             </tr>
                                         </thead>
@@ -151,8 +151,8 @@ session_start();
 										
                                            
                                                	<?php
-												$sql="SELECT * FROM dishes order by d_id desc";
-												$query=mysqli_query($db,$sql);
+												$sql="SELECT * FROM products order by product_id desc";
+												$query=mysqli_query($link,$sql);
 												
 													if(!mysqli_num_rows($query) > 0 )
 														{
@@ -162,25 +162,26 @@ session_start();
 														{				
 																	while($rows=mysqli_fetch_array($query))
 																		{
-																				$mql="select * from restaurant where rs_id='".$rows['rs_id']."'";
-																				$newquery=mysqli_query($db,$mql);
+																				$mql="select * from products where product_id='".$rows['product_id']."'";
+																				$newquery=mysqli_query($link,$mql);
 																				$fetch=mysqli_fetch_array($newquery);
 																				
 																				
-																					echo '<tr><td>'.$fetch['title'].'</td>
+																					echo '<tr><td>'.$fetch['product_name'].'</td>
 																					
-																								<td>'.$rows['title'].'</td>
-																								<td>'.$rows['slogan'].'</td>
-																								<td>$'.$rows['price'].'</td>
+																								<td>'.$rows['description'].'</td>
+																								<td>'.$rows['price'].'</td>
+																								<td>'.$rows['stock_quantity'].'</td>
 																								
 																								
 																								<td><div class="col-md-3 col-lg-8 m-b-10">
-																								<center><img src="Res_img/dishes/'.$rows['img'].'" class="img-responsive  radius" style="max-height:100px;max-width:150px;" /></center>
+																								<center><img src="../images/'.$rows['Image'].'" class="img-responsive  radius" style="max-height:100px;max-width:150px;" /></center>
 																								</div></td>
+                                                                                                <td>'.$rows['country'].'</td>
 																								
 																							
-																									 <td><a href="delete_menu.php?menu_del='.$rows['d_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
-																									 <a href="update_menu.php?menu_upd='.$rows['d_id'].'" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
+																									 <td><a href="delete_menu.php?menu_del='.$rows['product_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+																									 <a href="update_menu.php?menu_upd='.$rows['product_id'].'" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
 																									</td></tr>';
 																					 
 																						

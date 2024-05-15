@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include("../connection/connect.php");
+include("../php/config.php");
 error_reporting(0);
 session_start();
 
@@ -17,18 +17,7 @@ if(isset($_POST['submit']))
 		  
 		
 		
-		if(empty($_POST['d_name'])||empty($_POST['about'])||$_POST['price']==''||$_POST['res_name']=='')
-		{	
-											$error = 	'<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>All fields Must be Fillup!</strong>
-															</div>';
-									
 		
-								
-		}
-	else
-		{
 		
 				$fname = $_FILES['file']['name'];
 								$temp = $_FILES['file']['tmp_name'];
@@ -37,7 +26,7 @@ if(isset($_POST['submit']))
 								$extension = strtolower(end($extension));  
 								$fnew = uniqid().'.'.$extension;
    
-								$store = "Res_img/dishes/".basename($fnew);                    
+								$store = "../images/".basename($fnew);                    
 	
 					if($extension == 'jpg'||$extension == 'png'||$extension == 'gif' )
 					{        
@@ -58,8 +47,8 @@ if(isset($_POST['submit']))
 												
 												
 				                                 
-												$sql = "INSERT INTO dishes(rs_id,title,slogan,price,img) VALUE('".$_POST['res_name']."','".$_POST['d_name']."','".$_POST['about']."','".$_POST['price']."','".$fnew."')";  // store the submited data ino the database :images
-												mysqli_query($db, $sql); 
+												$sql = "INSERT INTO products(product_id,product_name,description,price,stock_quantity,Image,country) VALUE('".$_POST['id_name']."','".$_POST['d_name']."','".$_POST['about']."','".$_POST['price']."', '".$_POST['stock']."','".$fnew."','".$_POST['country']."')";  // store the submited data ino the database :images
+												mysqli_query($link, $sql); 
 												move_uploaded_file($temp, $store);
 			  
 													$success = 	'<div class="alert alert-success alert-dismissible fade show">
@@ -96,7 +85,7 @@ if(isset($_POST['submit']))
 	
 	
 
-}
+
 
 
 
@@ -185,8 +174,7 @@ if(isset($_POST['submit']))
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
-                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-                        <li class="nav-label">Log</li>
+                      
                         <li> <a href="all_users.php">  <span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -238,17 +226,30 @@ if(isset($_POST['submit']))
                                        
                                         <hr>
                                         <div class="row p-t-20">
+                                        <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Dish Name ID</label>
+                                                    <input type="int" name="id_name" class="form-control" required>
+                                                   </div>
+                                            </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Dish Name</label>
-                                                    <input type="text" name="d_name" class="form-control" >
+                                                    <input type="text" name="d_name" class="form-control" required>
                                                    </div>
                                             </div>
                                       
                                             <div class="col-md-6">
                                                 <div class="form-group has-danger">
                                                     <label class="control-label">Description</label>
-                                                    <input type="text" name="about" class="form-control form-control-danger" >
+                                                    <input type="text" name="about" class="form-control form-control-danger" required>
+                                                    </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group has-danger">
+                                                    <label class="control-label">Country</label>
+                                                    <input type="text" name="country" class="form-control form-control-danger" required>
                                                     </div>
                                             </div>
                                      
@@ -258,7 +259,7 @@ if(isset($_POST['submit']))
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Price </label>
-                                                    <input type="text" name="price" class="form-control" placeholder="$">
+                                                    <input type="text" name="price" class="form-control" placeholder="$" required>
                                                    </div>
                                             </div>
                                    
@@ -268,38 +269,20 @@ if(isset($_POST['submit']))
                                                     <input type="file" name="file"  id="lastName" class="form-control form-control-danger" placeholder="12n">
                                                     </div>
                                             </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Stock </label>
+                                                    <input type="int" name="stock" class="form-control" placeholder="Stock" required>
+                                                   </div>
+                                            </div>
+
+
                                         </div>
                               
 										
                                   
-                                        <div class="row">
-                                            
-											
-											
-											
-											
-											
-											
-											 <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Select Restaurant</label>
-													<select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
-                                                        <option>--Select Restaurant--</option>
-                                                 <?php $ssql ="select * from restaurant";
-													$res=mysqli_query($db, $ssql); 
-													while($row=mysqli_fetch_array($res))  
-													{
-                                                       echo' <option value="'.$row['rs_id'].'">'.$row['title'].'</option>';;
-													}  
-                                                 
-													?> 
-													 </select>
-                                                </div>
-                                            </div>
-											
-											
-											
-                                        </div>
+                                     
                                      
                                         </div>
                                     </div>

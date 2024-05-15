@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
              
               // flash message
               echo "<script type='text/javascript'>alert('Login Successful !');
-              window.location='dash.php';
+              window.location='all_users.php';
               </script>";
               exit();
           
