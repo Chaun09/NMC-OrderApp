@@ -144,9 +144,7 @@ hr {
   box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.2rem #5c4ac7;
 }
 
-.custom-radio .custom-control-input:checked ~ .custom-control-indicator {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0088"%3E%3Cpath fill="%23fff" d="M6.564.75l-3.593.612-1.538-1.55l04.262.9747.2582.193z"/%3E%3C/svg%3E");
-}
+
 
 .custom-control-input:active ~ .custom-control-indicator {
   color: #fff;
@@ -158,9 +156,7 @@ hr {
   background-color: #eee;
 }
 
-.custom-control-input:disabled ~ .custom-control-description {
-  color: #76767;
-}
+
 
 .search-bar {
   width: fit-content;
@@ -328,21 +324,7 @@ hr {
   margin-top: 30px;
 }
 
-.b-l {
-  border-left: 1px solid #edeed;
-}
 
-.b-r {
-  border-left: 1px solid #edeed;
-}
-
-.b-t {
-  border-top: 1px solid #edeed;
-}
-
-.b-b {
-  border-bottom: 1px solid #edeed;
-}
 
 .b-b-0 {
   border-bottom: none !important;
@@ -874,9 +856,7 @@ hr {
   float: left;
 }
 
-@media (max-width: 543px) {
-  ...;
-}
+
 
 @media (min-width: 544px) and (max-width: 767px) {
   .food-item-wrap .right-text {
@@ -935,9 +915,7 @@ hr {
   }
 }
 
-@media (min-width: 1200px) {
-  ...;
-}
+
 
 /*============================================
 * Modal 
@@ -1153,9 +1131,7 @@ Steps
   }
 }
 
-@media (min-width: 1200px) {
-  ...;
-}
+
 
 /****** featured restaurants block *******/
 
