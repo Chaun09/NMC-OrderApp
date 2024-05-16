@@ -218,9 +218,9 @@ th {
 						
 							?>
 												<tr>	
-														 <td data-column="Item"> <?php echo $row['title']; ?></td>
+														 <td data-column="Item"> <?php echo $row['product_name']; ?></td>
 														  <td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
-														  <td data-column="price">$<?php echo $row['price']; ?></td>
+														  <td data-column="price">$<?php echo $row['total_amount']; ?></td>
 														   <td data-column="status"> 
 														   <?php 
 																			$status=$row['status'];
@@ -230,12 +230,12 @@ th {
 																			<button type="button" class="btn btn-info"><span class="fa fa-bars"  aria-hidden="true" ></span> Dispatch</button>
 																		   <?php 
 																			  }
-																			   if($status=="in process")
+																			   if($status=="Process")
 																			 { ?>
 																				<button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span> On The Way!</button>
 																			<?php
 																				}
-																			if($status=="closed")
+																			if($status=="Closed")
 																				{
 																			?>
 																			 <button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true"></span> Delivered</button> 
@@ -243,7 +243,7 @@ th {
 																			} 
 																			?>
 																			<?php
-																			if($status=="rejected")
+																			if($status=="Rejected")
 																				{
 																			?>
 																			 <button type="button" class="btn btn-danger"> <i class="fa fa-close"></i> Cancelled</button>
@@ -257,7 +257,7 @@ th {
 														   
 														   
 														   </td>
-														  <td data-column="Date"> <?php echo $row['date']; ?></td>
+														  <td data-column="Date"> <?php echo $row['order_date']; ?></td>
 														   <td data-column="Action"> <a href="delete_orders.php?order_del=<?php echo $row['o_id'];?>" onclick="return confirm('Are you sure you want to cancel your order?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
 															</td>
 														 
