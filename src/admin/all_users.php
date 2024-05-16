@@ -4,8 +4,14 @@
 include("../php/config.php");
 error_reporting(0);
 session_start();
+if(empty($_SESSION["adm_id"]))
+{
+	header('location:../php/index.php');
+}
 
 ?>
+
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +36,7 @@ session_start();
          <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
             <div class="navbar-header">
-                    <a class="navbar-brand" href="dash.php">
+                    <a class="navbar-brand" href="all_users.php">
                         
                         <span><img src="images/icn.png" alt="homepage" class="dark-logo" /></span>
                     </a>
@@ -88,9 +94,9 @@ session_start();
                         <li> <a href="all_users.php">  <span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="all_restaurant.php">All Restaurants</a></li>
-								<li><a href="add_category.php">Add Category</a></li>
-                                <li><a href="add_restaurant.php">Add Restaurant</a></li>
+								<li><a href="all_restaurant.php">All FeedBack</a></li>
+								<li><a href="add_category.php">DashBoard</a></li>
+                                <li><a href="add_restaurant.php">Admin</a></li>
                                 
                             </ul>
                         </li>
@@ -133,9 +139,11 @@ session_start();
                                             
                                                 <th>Email</th>
                                                 <th>PhoneNumber</th>
-												<!-- <th>Address</th>												
-												<th>Reg-Date</th>
-												<th>Action</th> -->
+                                                
+												 <th>Address</th>	
+                                                 										
+												<th>Date</th>
+												<th>Action</th> 
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -160,11 +168,11 @@ session_start();
 																								<td>'.$rows['full_name'].'</td>
 																								<td>'.$rows['email'].'</td>
 																								<td>'.$rows['PhoneNumber'].'</td>
-																								// <td>'.$rows['phone'].'</td>
-																								// <td>'.$rows['address'].'</td>																								
-																								// <td>'.$rows['date'].'</td>
-																									 <td><a href="delete_users.php?user_del='.$rows['u_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
-																									 <a href="update_users.php?user_upd='.$rows['u_id'].'" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
+																								
+																								 <td>'.$rows['address'].'</td>																								
+																								 <td>'.$rows['date'].'</td>
+																									 <td><a href="delete_users.php?user_del='.$rows['user_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+																									 <a href="update_users.php?user_upd='.$rows['user_id'].'" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
 																									</td></tr>';
 																		}	
 														}

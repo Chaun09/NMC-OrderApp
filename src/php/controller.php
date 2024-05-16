@@ -33,6 +33,8 @@ if (isset($_POST['SignUp'])) {
     $stud_email             = $_POST['signup_email'];
     $stud_password          = $_POST['signup_password'];
     $stud_confirm_password  = $_POST['signup_password_again'];
+    $stud_phone             = $_POST['signup_phone'];
+
     // $stud_role_id = $_POST['signup_role_id'];
     
     $emailQuery = "SELECT * FROM users WHERE email=? LIMIT 1";
@@ -79,7 +81,7 @@ if (isset($_POST['SignUp'])) {
         $token = bin2hex(random_bytes(50));
         $verified = false; 
 
-        $sql = "INSERT INTO users (username, password, email, full_name) VALUES ('$stud_username', '$stud_password', '$stud_email' , '$stud_fullname')";
+        $sql = "INSERT INTO users (username, password, email, full_name,PhoneNumber) VALUES ('$stud_username', '$stud_password', '$stud_email' , '$stud_fullname' , '$stud_phone')";
         $result = mysqli_query($link,$sql);
 
             echo "<script type='text/javascript'>alert('Tao Tai Khoan Thanh Cong');

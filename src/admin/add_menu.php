@@ -101,7 +101,8 @@ if(isset($_POST['submit']))
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="icon" href="../images/icon copy.png">
+<link rel="shortcut icon" href="../images/icon copy.png">
     <title>Add Menu</title>
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">
@@ -120,7 +121,7 @@ if(isset($_POST['submit']))
          <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
             <div class="navbar-header">
-                    <a class="navbar-brand" href="dashboard.php">
+                    <a class="navbar-brand" href="all_users.php">
                         
                         <span><img src="images/icn.png" alt="homepage" class="dark-logo" /></span>
                     </a>
@@ -177,10 +178,10 @@ if(isset($_POST['submit']))
                       
                         <li> <a href="all_users.php">  <span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
-                            <ul aria-expanded="false" class="collapse">
-								<li><a href="all_restaurant.php">All Restaurants</a></li>
-								<li><a href="add_category.php">Add Category</a></li>
-                                <li><a href="add_restaurant.php">Add Restaurant</a></li>
+                        <ul aria-expanded="false" class="collapse">
+								<li><a href="all_restaurant.php">All FeedBack</a></li>
+								<li><a href="add_category.php">DashBoard</a></li>
+                                <li><a href="add_restaurant.php">Admin</a></li>
                                 
                             </ul>
                         </li>

@@ -92,11 +92,11 @@ a:hover {
   text-decoration: none;
 }
 a.link {
-  color: #455a64;
+  color: #5fa022;
 }
 a.link:focus,
 a.link:hover {
-  color: #1976d2;
+  color:#5fa022;
 }
 .img-responsive,
 .carousel.vertical .carousel-inner > .item > img,
@@ -276,7 +276,7 @@ h6 {
   color: #1976d2;
 }
 .bg-primary {
-  background-color: #5c4ac7 !important;
+  background-color: #5fa022!important;
 }
 .bg-success {
   background-color: #26dad2 !important;
@@ -2157,7 +2157,7 @@ textarea {
   border-color: #1976d2;
 }
 .card-primary {
-  background: #5c4ac7 none repeat scroll 0 0;
+  background: #5fa022 none repeat scroll 0 0;
   border-color: #5c4ac7;
 }
 .card-dark {
@@ -2226,7 +2226,7 @@ textarea {
   border-color: #5c4ac7;
 }
 .card-outline-primary .card-header {
-  background: #5c4ac7 none repeat scroll 0 0;
+  background: #5fa022 none repeat scroll 0 0;
   border-color: #5c4ac7;
 }
 .card-body {
@@ -2573,7 +2573,7 @@ table.dataTable thead .sorting::after {
   padding: 0 1em;
 }
 .tablesaw-bar .btn-group label {
-  color: #67757c !important;
+  color:#5fa022 !important;
 }
 .dt-bootstrap {
   display: block;
@@ -4371,7 +4371,7 @@ footer p {
 }
 .tabletitle {
   padding: 5px;
-  background: #e7e7e7;
+  background: #5fa022;
 }
 .service {
   border: 1px solid #e7e7e7;
@@ -5396,7 +5396,7 @@ tbody tr td:last-child {
   vertical-align: top;
 }
 .table > thead > tr > th {
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid #5fa022;
   font-weight: 600;
 }
 .table {
@@ -6095,7 +6095,7 @@ tbody tr td:last-child {
 }
 .favourite-menu-details .table > tbody > tr > td {
   border-top: none;
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid #5fa022;
 }
 .favourite-menu-details .favourite-menu-img {
   border-right: 1px solid #e7e7e7;

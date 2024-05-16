@@ -112,6 +112,11 @@
                                     <i class="fas fa-user-circle"></i>
                                     <input class="acc-username" type="email" id="student" name="signup_email" placeholder="Email" required >
                                 </div>
+
+                                <div class="acc-details">
+                                    <i class="fas fa-user-circle"></i>
+                                    <input class="acc-username" type="int" id="student" name="signup_phone" placeholder="Phone" required >
+                                </div>
                                 <div class="showpass">
                                         <input type="checkbox" id="showPASS1">
                                         <label for="terms">

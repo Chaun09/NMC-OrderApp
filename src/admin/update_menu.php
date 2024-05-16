@@ -8,6 +8,7 @@ session_start();
 
 
 
+
 if(isset($_POST['submit']))           //if upload btn is pressed
 {
 	
@@ -44,16 +45,16 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 												
 												
 												
-				                                 
-												$sql = "update products set product_name='$_POST[d_name]',description='$_POST[about]',price='$_POST[price]',img='$fnew', country='$_POST[country]', stock_quantity='$_POST[quantity]' where product_id='$_GET[menu_upd]'";
-												mysqli_query($link, $sql); 
-												move_uploaded_file($temp, $store);
+				    $sql = "update products set product_name='$_POST[d_name]',description='$_POST[about]',price='$_POST[price]',Image='$fnew', country='$_POST[country]', stock_quantity='$_POST[quantity]' where product_id='$_GET[menu_upd]'";
+					mysqli_query($link, $sql); 
+					move_uploaded_file($temp, $store);
 			  
-												$success = 	'<div class="alert alert-success alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Record Updated!</strong>
-															</div>';
-                
+					$success = 	'<div class="alert alert-success alert-dismissible fade show">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<strong>Record Updated!</strong>
+					</div>';																																							
+                                             							
+																			
 	
 										
 					}
@@ -138,10 +139,10 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                         <li class="nav-label">Home</li>
                         <li> <a href="all_users.php">  <span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
-                            <ul aria-expanded="false" class="collapse">
-								<li><a href="all_restaurant.php">All Restaurants</a></li>
-								<li><a href="add_category.php">Add Category</a></li>
-                                <li><a href="add_restaurant.php">Add Restaurant</a></li>
+                        <ul aria-expanded="false" class="collapse">
+								<li><a href="all_restaurant.php">All FeedBack</a></li>
+								<li><a href="add_category.php">DashBoard</a></li>
+                                <li><a href="add_restaurant.php">Admin</a></li>
                                 
                             </ul>
                         </li>

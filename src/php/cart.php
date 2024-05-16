@@ -148,7 +148,9 @@ only screen and (max-width: 760px),
 }
 
 
-
+th {
+	background-color: #5fa022;
+}
 
 
 

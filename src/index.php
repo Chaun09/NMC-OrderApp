@@ -160,7 +160,7 @@ $(window).load(function () {
             }
               </style>
               
-              <li class="dropmenu"><a href="menu.html">Menu</a>
+              <li class="dropmenu"><a href="menu.php">Menu</a>
                 <ul>
                   <li><a href="#">European Foods</a></li>
                   <li><a href="#">VietNam Foods</a></li>
@@ -178,13 +178,13 @@ $(window).load(function () {
                                 <li><a href="php/user-profile.php" title="Profile">Profile</a></li>
                                 <li><a href="php/user-accsetting.php" title="Settings">Settings</a></li> 
                                 <li><a href="php/logout.php" title="Logout">Logout&nbsp;<i class="fas fa-power-off"></i></a></li> 
-                                
-                            </ul>
-                            <style>
+                               <style>
                               i {
                                 transform: translate(0%,15%);
                               }
-                            </style>
+                            </style>   
+                            </ul>
+                          
                             
               </li>
             
@@ -613,7 +613,7 @@ $(window).load(function () {
             <ul>
               <li class="current"><a href="index.php">Home</a></li>
               <li><a href="about-us.html">About Us</a></li>
-              <li><a href="menu.html">Menu</a></li>
+              <li><a href="menu.php">Menu</a></li>
               <li><a href="portfolio.html">Moments</a></li>
               <li><a href="news.html">News</a></li>
               <li><a href="contacts.html">Contacts</a></li>
