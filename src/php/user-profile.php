@@ -45,7 +45,7 @@ $sid = $row['user_id'];
                     </div>
                     <div class="right-column-right">
                         <?php
-                        $num_of_comquiz_sql = "SELECT * FROM quiz q INNER JOIN quiz_question qq, history h WHERE (qq.quiz_id = q.quiz_id) AND (qq.quques_id = h.quques_id) AND (h.stud_id = '$sid') GROUP BY q.quiz_id";
+                        $num_of_comquiz_sql = "SELECT * FROM orderdetails  WHERE user_id = '$log_userid'";
                         $resultQuiz = mysqli_query($link, $num_of_comquiz_sql);
                         if($resultQuiz){
                             
@@ -61,7 +61,7 @@ $sid = $row['user_id'];
                         ?>
                         <div class="complete-quiz-box">
                             <p class="complete-box-title">
-                                Total Completed Quiz
+                                Order History
                             </p>
                             <span class="complete-box-number">
                                 <?php echo $rowNum;?>
@@ -69,8 +69,8 @@ $sid = $row['user_id'];
                         </div>
 
                         <?php
-                        $num_of_question_sql = "SELECT * FROM question WHERE stud_id = '$sid'";
-                        $resultQuestion = mysqli_query($conn, $num_of_question_sql);
+                        $num_of_question_sql = "SELECT * FROM orders WHERE user_id = '$log_userid'";
+                        $resultQuestion = mysqli_query($link, $num_of_question_sql);
                         if($resultQuestion){
                             
                             $rowNum = mysqli_num_rows($resultQuestion);
@@ -85,7 +85,7 @@ $sid = $row['user_id'];
                         ?>
                         <div class="question-box">
                             <p class="question-box-title">
-                                Total Question
+                                Details About My Order History
                             </p>
                             <span class="question-box-number">
                                 <?php echo $num_question;?>

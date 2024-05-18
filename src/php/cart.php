@@ -147,8 +147,8 @@ th {
 							  <th>Quantity</th>
 							  <th>Price</th>
 							   <th>Status</th>
-							     <th>Date</th>
-								   <th>Action</th>
+							     <th>Action</th>
+								   <th>Date</th>
 							  
 							</tr>
 						  </thead>
@@ -157,7 +157,7 @@ th {
 						  
 							<?php 
 				
-						$query_res= mysqli_query($link,"select * from orders where user_id ='".$_SESSION['id']."'");
+						$query_res= mysqli_query($link,"select * from cart where user_id ='".$_SESSION['id']."'");
 												if(!mysqli_num_rows($query_res) > 0 )
 														{
 															echo '<td colspan="6"><center>You have No orders Placed yet. </center></td>';
@@ -180,6 +180,8 @@ th {
 																			{
 																			?>
 																			<button type="button" class="btn btn-info"><span class="fa fa-bars"  aria-hidden="true" ></span> Dispatch</button>
+																			<td data-column="Action"> <a href="delete_orders.php?order_del=<?php echo $row['o_id'];?>" onclick="return confirm('Are you sure you want to cancel your order?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+
 																		   <?php 
 																			  }
 																			   if($status=="Process")
@@ -210,19 +212,62 @@ th {
 														   
 														   </td>
 														  <td data-column="Date"> <?php echo $row['order_date']; ?></td>
-														   <td data-column="Action"> <a href="delete_orders.php?order_del=<?php echo $row['o_id'];?>" onclick="return confirm('Are you sure you want to cancel your order?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+														  
 															</td>
 														 
 												</tr>
 												
 											
-														<?php }} ?>					
+														<?php }} ?>		
+												<?php 
+												function countItemsInCart() {
+													global $link;
+												
+													$sql = "SELECT SUM(quantity) as total_items FROM cart WHERE user_id ='".$_SESSION['id']."'";
+													$result = $link->query($sql);
+												
+													if ($result->num_rows > 0) {
+														$row = $result->fetch_assoc();
+														return $row['total_items'];
+													} else {
+														return 0;
+													}
+												}
+												
+												
+												?>	
+												<tr>Số Lượng sản phẩm có trong giỏ hàng: <?php echo countItemsInCart();?></tr>		
+												<br>
+												<?php 
+														function countPriceInCart() {
+															global $link;
+														
+															$sql = "SELECT SUM(total_amount) as total_price FROM cart WHERE user_id ='".$_SESSION['id']."'";
+															$result = $link->query($sql);
+														
+															if ($result->num_rows > 0) {
+																$row = $result->fetch_assoc();
+																return $row['total_price'];
+															} else {
+																return 0;
+															}
+														}
+														
+												?>
+												<tr>Tổng số tiền: <?php echo countPriceInCart();?></tr>		
+	
 							
 							
 										
 						
 						  </tbody>
+
 					</table>
+					<form action="insert_orderdetails.php" method="post">
+        <input type="hidden" name="product_id" value="<?php echo $prdid; ?>">
+        <input type="hidden" id="quantity_input" name="quantity" value="1">
+        <button class="confirm-button" type="submit">Xác nhận</button>
+    </form>
 						
 					
                                     
