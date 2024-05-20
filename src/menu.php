@@ -115,7 +115,7 @@ $(window).load(function () {
             <div class="container">
                 <div class="title text-xs-center m-b-30" style="background-color:none;">
                     <h2>Popular Dishes of the Month</h2>
-                    <p class="lead">Easiest way to order your favourite food among these top 6 dishes</p>
+                   
                 </div>
                 <div class="row">
 

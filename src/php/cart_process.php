@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $server = "INSERT INTO orders(user_id, total_amount, description, price, product_id, quantity, product_name) VALUES ('$userid', '$total', '$description', '$price', '$product_id', '$quantity', '$name')";
     $server1 = "INSERT INTO cart(user_id, total_amount, description, price, product_id, quantity, product_name) VALUES ('$userid', '$total', '$description', '$price', '$product_id', '$quantity', '$name')";
    if (mysqli_query($link, $server) == 1 && mysqli_query($link, $server1) == 1) {
-    header("Location: ../menu.php");
+    header("Location: cart.php");
     exit();
 }    }
 else {

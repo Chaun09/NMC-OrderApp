@@ -48,14 +48,16 @@ $prdid = $_GET['res_id'];
     </style>
 </head>
 <body>
+<?php include("php/backbtn.php");?> 
 <?php
 $sql = "select * from products where product_id = '$prdid '";
 $result = mysqli_query($link, $sql);
 $row = mysqli_fetch_array($result);
 
 ?>
-<div class="food-item">
-    <h2><?php echo $row['product_name']; ?></h2>
+<div style="border-radius:20px; border-color: #4CAF50; box-shadow: black;" class="food-item">
+    <h2 style="text-align:center;"><?php echo $row['product_name']; ?></h2>
+   <img style="border-radius: 20px;" height="300px" width="300px" src="images/<?php echo $row['Image'];?>">
 
 <?php
 if($row['country'] == 'vietnam')
@@ -64,32 +66,40 @@ if($row['country'] == 'vietnam')
 
 ?>
 
-    <?php echo "<p>Giá: <span id='price'>$row[price]VNĐ</span></p> "; ?>
+    <?php echo "<p style='font-size: 25px; text-align:center;'>Giá: <span  id='price'>$row[price]VNĐ</span></p> "; ?>
     
     <?php }
     
     else {
         
-        echo "<p>Giá: <span id='price'>$row[price]$</span></p> ";
+        echo "<p  style='font-size: 25px; text-align:center;'>Giá: <span id='price'>$row[price]$</span></p> ";
 
     
     }?>
 
-    <p id="description"><?php echo $row['description'] ; ?></p>
+    <p style='font-size: 20px; text-align:center;'  id="description"><?php echo $row['description'] ; ?></p>
     
-    <div class="quantity-controls">
-        <button onclick="decreaseQuantity()">-</button>
+    <div style="transform:translate(38%,0%);" class="quantity-controls">
+        <button style="border-radius: 25px; height: 25px; width: 25px; text-align:center;" class="decrease"  onclick="decreaseQuantity()">-</button>
         <span id="quantity" name="quantity">1</span>
-        <button onclick="increaseQuantity()">+</button>
+        <button style="border-radius: 25px; height: 25px; width: 25px; text-align:center;" class="increase" onclick="increaseQuantity()">+</button>
     </div>
     
-    <form action="php/cart_process.php" method="post">
+    <form style="transform:translate(36%,0%);"  action="php/cart_process.php" method="post">
         <input type="hidden" name="product_id" value="<?php echo $prdid; ?>">
         <input type="hidden" id="quantity_input" name="quantity" value="1">
         <button class="confirm-button" type="submit">Xác nhận</button>
     </form>
 </div>
+<style>
+    .decrease:hover {
+background-color: #4CAF50;
+    }
+    .increase:hover{
+        background-color: #4CAF50;
+    }
 
+</style>
 <script>
     let quantity = 1;
 

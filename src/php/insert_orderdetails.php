@@ -16,12 +16,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $row = $result->fetch_assoc();
     $total_item = $row['total_items'];
     $server = "INSERT INTO orderdetails(subtotal, quantity, user_id) VALUES ('$total_price', '$total_item', '$userid')";
-    $sql1 = "DELETE  FROM cart";
+
+
    
+    $sql1 = "DELETE  FROM cart";
+  
    if (mysqli_query($link, $server) == 1 && mysqli_query($link, $sql1) == 1) 
+
+
    {
-    header("Location: ../menu.php");
-    exit();
+   
+
+    echo '<form method="GET" >
+    <label for="text">Address:</label>
+    <input placeholder="Address" name="address" required>
+    <label for="text">Note:</label>
+    <input placeholder="Note" name="note" required>
+    <label for="text">Payment: </label>
+    <label>Cash:</label>
+    <input type="radio" name="cash">
+    <label>Banking:</label>
+    <input type="radio" name="cash">
+    
+    </form>';
+    
+  
 }    
 else {
     echo "Unsuccessful";

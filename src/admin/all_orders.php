@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include("../connection/connect.php");
+include("../php/config.php");
 error_reporting(0);
 session_start();
 
@@ -33,7 +33,7 @@ session_start();
          <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
             <div class="navbar-header">
-                    <a class="navbar-brand" href="dashboard.php">
+                    <a class="navbar-brand" href="all_users.php">
                         
                         <span><img src="images/icn.png" alt="homepage" class="dark-logo" /></span>
                     </a>
@@ -87,8 +87,6 @@ session_start();
                    <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
-                        <li> <a href="dashboard.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-                        <li class="nav-label">Log</li>
                         <li> <a href="all_users.php">  <span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
                         <ul aria-expanded="false" class="collapse">
@@ -136,7 +134,7 @@ session_start();
                                     <thead class="thead-dark">
                                             <tr>
                                                 <th>User</th>		
-                                                <th>Title</th>
+                                                <th>Note</th>
                                                 <th>Quantity</th>
                                                 <th>Price</th>
 												<th>Address</th>
@@ -150,8 +148,8 @@ session_start();
                                            
 											
 											<?php
-												$sql="SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id ";
-												$query=mysqli_query($db,$sql);
+												$sql="SELECT users.*, orderdetails.* FROM users INNER JOIN orderdetails ON users.user_id=orderdetails.user_id ";
+												$query=mysqli_query($link,$sql);
 												
 													if(!mysqli_num_rows($query) > 0 )
 														{
@@ -166,9 +164,9 @@ session_start();
 																				<?php
 																					echo ' <tr>
 																					           <td>'.$rows['username'].'</td>
-																								<td>'.$rows['title'].'</td>
+																								<td>'.$rows['note'].'</td>
 																								<td>'.$rows['quantity'].'</td>
-																								<td>$'.$rows['price'].'</td>
+																								<td>$'.$rows['subtotal'].'</td>
 																								<td>'.$rows['address'].'</td>';
 																								?>
 																								<?php 

@@ -83,17 +83,17 @@ body{
 }
 
 .left-column-info .acc-pic {
-    width: 130px;
-    height: 130px;
+    width: 190px;
+    height: 190px;
     margin-bottom: 35px;
-    border: 2px solid #FA8334;
+    border: 2px solid #5fa022;
     box-sizing: border-box;
     border-radius: 50%;
 }
 
 .left-column-info .acc-pic img {
-    width: 118px;
-    height: 118px;
+    width: 180px;
+    height: 180px;
     margin: 4px 4px;
     border-radius: 50%;
 }
@@ -110,7 +110,7 @@ body{
 }
 
 .left-column-info .acc-detail button {
-    background: #FA8334;
+    background: #5fa022;
     border-radius: 10px;
     font-family: 'Nunito';
     font-style: normal;
@@ -127,7 +127,7 @@ body{
 
 .left-column-info .acc-detail button:hover {
     background-color: #FFFFFF;
-    color: #FA8334;
+    color: #5fa022;
     transition: 0.6s;
 }
 
@@ -143,7 +143,7 @@ body{
 .right-column-right .complete-quiz-box {
     width: 100%;
     min-height: 175px;
-    background: #FA8334;
+    background: #5fa022;
     border-radius: 10px;
     text-align: center;
 }
@@ -171,7 +171,7 @@ body{
 .right-column-right .question-box {
     width: 100%;
     min-height: 175px;
-    border: 2px solid #FA8334;
+    border: 2px solid #5fa022;
     box-sizing: border-box;
     border-radius: 10px;
     text-align: center;
@@ -183,7 +183,7 @@ body{
     font-weight: 700;
     font-size: 24px;
     line-height: 33px;
-    color: #FA8334;
+    color: #5fa022;
     margin-top: 37px;
 }
 
@@ -193,6 +193,6 @@ body{
     font-weight: 700;
     font-size: 36px;
     line-height: 49px;
-    color: #FA8334;
+    color: #5fa022;
     margin-top: 20px;
 }
