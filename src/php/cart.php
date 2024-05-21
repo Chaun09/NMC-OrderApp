@@ -100,7 +100,8 @@ td, th {
 
 
 
-th {
+th 
+{
 	background-color: #5fa022;
 }
 
