@@ -100,8 +100,7 @@ td, th {
 
 
 
-th 
-{
+th {
 	background-color: #5fa022;
 }
 
@@ -181,7 +180,7 @@ th
 																			{
 																			?>
 																			<button type="button" class="btn btn-info"><span class="fa fa-bars"  aria-hidden="true" ></span> Dispatch</button>
-																			<td data-column="Action"> <a href="delete_orders.php?order_del=<?php echo $row['o_id'];?>" onclick="return confirm('Are you sure you want to cancel your order?');" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+																			<td data-column="Action"> <a href="delete_orders.php?order_del=<?php echo $row['product_id'];?>" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
 
 																		   <?php 
 																			  }
