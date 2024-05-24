@@ -457,36 +457,61 @@ $(window).load(function () {
           <a href="#" class="next"></a>
           <ul class="carousel2">
             <li>
-              <div><img src="images/bánhtrang.jpg" alt="">
-                <div class="col1 upp"> <a href="#">Bánh Xèo</a></div>
+            <?php 
+              $query = "SELECT * FROM products WHERE product_id = 2";
+              $result = mysqli_query($link, $query);
+              $row = mysqli_fetch_array($result);
+              ?>
+              <div><img src="images/<?php  echo $row['Image']; ?>" alt="">
+                <div class="col1 upp"> <a href="#"><?php  echo $row['product_name'];?></a></div>
                 <span> Best Seller</span>
-                <div class="price_1">500.000VNĐ</div>
+                <div class="price_1"><?php echo $row['price']; ?>VNĐ</div>
               </div>
             </li>
             <li>
-              <div><img src="images/comtam.jpg" alt="">
-                <div class="col1 upp"> <a href="#">Cơm Tấm</a></div>
+              <?php 
+              $query = "SELECT * FROM products WHERE product_id = 1";
+              $result = mysqli_query($link, $query);
+              $row = mysqli_fetch_array($result);
+              ?>
+              <div><img src="images/<?php echo $row['Image']; ?>" alt="">
+                <div class="col1 upp"> <a href="#"><?php echo $row['product_name'];?></a></div>
                 <span>Best Seller</span>
-                <div class="price_1">500.000VNĐ</div>
+                <div class="price_1"><?php echo $row['price']; ?>VNĐ</div>
               </div>
             </li>
             <li>
-              <div><img src="images/banhcuon.jpg" alt="">
-                <div class="col1 upp"> <a href="html/banhcuon.html">Bánh Cuốn</a></div>
+              <?php 
+              $query = "SELECT * FROM products WHERE product_id = 11";
+              $result = mysqli_query($link, $query);
+              $row = mysqli_fetch_array($result);
+              ?>
+              <div><img src="images/<?php echo $row['Image']; ?>" alt="">
+                <div class="col1 upp"> <a href="html/banhcuon.html"><?php echo $row['product_name']; ?></a></div>
                 <span> Best Seller</span>
-                <div class="price_1">500.000VNĐ</div>
+                <div class="price_1"><?php echo $row['price']; ?>VNĐ</div>
               </div>
             </li>
             <li>
-              <div><img src="images/bunbohue.jpg" alt="">
-                <div class="col1 upp"> <a href="#">Bún Bò Huế</a></div>
+              <?php 
+              $query = "SELECT * FROM products WHERE product_id = 3";
+              $result = mysqli_query($link, $query);
+              $row = mysqli_fetch_array($result);
+              ?>
+              <div><img src="images/<?php echo $row['Image']; ?>" alt="">
+                <div class="col1 upp"> <a href="#"><?php echo $row['product_name']; ?></a></div>
                 <span> Best Seller </span>
-                <div class="price_1">500.000VNĐ</div>
+                <div class="price_1"><?php  echo $row['price'];?> VNĐ</div>
               </div>
             </li>
             <li>
-              <div><img src="images/buncha.jpg" alt="">
-                <div class="col1 upp"> <a href="#">Bún Chả</a></div>
+              <?php 
+              $query = "SELECT * FROM products WHERE product_id = 4";
+              $result = mysqli_query($link, $query);
+              $row = mysqli_fetch_array($result);
+              ?>
+              <div><img src="images/<?php echo $row['Image']; ?>" alt="">
+                <div class="col1 upp"> <a href="#"><?php echo $row['product_name']; ?></a></div>
                 <span>Best Seller</span>
                 <style>
                   span {
@@ -498,15 +523,20 @@ $(window).load(function () {
                     transform: translate(-70%,0%);
                   }
                 </style>
-                <div class="price_1">500.000VNĐ</div>
+                <div class="price_1"><?php  echo $row['price'];?>VNĐ</div>
               </div>
             </li>
             <li>
               <div>
-                <img src="images/bundau.jpg" alt="">
-                <div class="col1 upp"><a href="#">Bún Đậu</a></div>
+              <?php 
+              $query = "SELECT * FROM products WHERE product_id = 6";
+              $result = mysqli_query($link, $query);
+              $row = mysqli_fetch_array($result);
+              ?>
+                <img src="images/<?php echo $row['Image']; ?>" alt="">
+                <div class="col1 upp"><a href="#"> <?php echo $row['product_name']; ?></a></div>
                 <span>Best Seller</span>
-                <div class="price_1">500.000VNĐ</div>
+                <div class="price_1"><?php echo $row['price']; ?>VNĐ</div>
               </div>
             </li>
           </ul>
