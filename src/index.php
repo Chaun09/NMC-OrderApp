@@ -547,6 +547,7 @@ $(window).load(function () {
 	height: 249px;
 }
 
+
 .carousel2 li {
 	float: left;
 	width: 240px !important;
