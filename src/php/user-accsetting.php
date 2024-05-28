@@ -102,7 +102,7 @@ $sid = $row['user_id'];
                     </p>
                     <span>If you sure about your decision, here is the button</span>
                     <div class="button-class" style="margin-top: 20px;">
-                        <button id="cancel-delaccset">Cancel</button>
+                        <button id="cancel-delaccset">Cancel</button>  
                         <input type="submit" value="Delete Account" name="delete-stud-acc" onclick = "if (! confirm('Confirm Delete Account?')) { return false; }">
                     </div>
                 </form>

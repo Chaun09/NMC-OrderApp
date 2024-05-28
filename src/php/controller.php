@@ -198,8 +198,8 @@ if (isset($_POST['forgot-password'])) {
     }
 
     if (count($errors) ==0) {
-       $sql = "SELECT * FROM student WHERE stud_email='$stud_email' LIMIT 1"; 
-        $result = mysqli_query($conn, $sql);
+       $sql = "SELECT * FROM users WHERE email='$stud_email' LIMIT 1"; 
+        $result = mysqli_query($link, $sql);
         $user = mysqli_fetch_assoc($result);
         $token = $user['token'];
         sendPasswordResetLink($stud_email, $token);
@@ -215,12 +215,12 @@ if (isset($_POST['reset-password-btn'])) {
     $stud_password = $_POST['stud_password'];
     $stud_confirm_password = $_POST['stud_confirm_password'];
 
-    $stud_password = password_hash($stud_password, PASSWORD_DEFAULT);
+    $stud_password1 = $stud_password;
     $stud_email = $_SESSION['stud_email'];
 
     if(count($errors)== 0) {
-        $sql= "UPDATE student SET hashed_password='$stud_password' WHERE stud_email='$stud_email'";
-        $result= mysqli_query($conn, $sql);
+        $sql= "UPDATE users SET password='$stud_password1' WHERE email='$stud_email'";
+        $result= mysqli_query($link, $sql);
         if ($result) {
             echo "<script type='text/javascript'>alert('Your password has been successfully resetted! Please re-login into your account using your new password.');
             window.location='index.php';
@@ -232,9 +232,9 @@ if (isset($_POST['reset-password-btn'])) {
 
 function resetPassword($token)
 {
-    global $conn;
-    $sql = "SELECT * FROM student WHERE token='$token' LIMIT 1";
-    $result = mysqli_query($conn, $sql);
+    global $link;
+    $sql = "SELECT * FROM users WHERE token='$token' LIMIT 1";
+    $result = mysqli_query($link, $sql);
     $user = mysqli_fetch_assoc($result);
     $_SESSION['stud_email'] = $user['stud_email'];
     header('location: reset-password.php');
