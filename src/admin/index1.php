@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
          
           } else {
               echo "<script type='text/javascript'>alert('Invalid credentials!');
-              window.location='../php/index.php';
+              window.location='index.php';
               </script>";
               return false;
           }
