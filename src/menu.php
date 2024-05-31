@@ -1,5 +1,14 @@
 <?php
-include "php/config.php";
+session_start();
+include 'php/config.php'; 
+
+$userid = $_SESSION['id'];
+if(!isset($_SESSION['id']))
+{
+  echo '<script>alert("You must log in to your account first.")</script>';
+  echo '<script>location.href="php/index.php"</script>';
+}
+
 ?>
 
 <!DOCTYPE html>

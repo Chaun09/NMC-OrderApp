@@ -27,16 +27,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
    {
    
 
-    echo '<form method="GET" >
+    echo '<form method="POST" action="add-address.php" >
     <label for="text">Address:</label>
     <input placeholder="Address" name="address" required>
     <label for="text">Note:</label>
     <input placeholder="Note" name="note" required>
     <label for="text">Payment: </label>
     <label>Cash:</label>
-    <input type="radio" name="cash">
+    <input type="radio" for="Cash" name="cash">
     <label>Banking:</label>
-    <input type="radio" name="cash">
+    <input type="radio" for="Banking" name="cash">
+    <button type="submit" name="submit"> Submit</button>
     
     </form>';
     
