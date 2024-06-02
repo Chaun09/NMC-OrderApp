@@ -1,27 +1,19 @@
-RESTAURANT BASIC FE (HTML,CSS,JS)
-
-HOME:
-
-![Screenshot 2024-02-28 150924](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/ceb83034-abd0-4ed7-86b9-90df90ac2b82)
-
-![Screenshot 2024-02-28 150946](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/c2135abd-6065-4397-8470-7df3033228b6)
-
-![Screenshot 2024-02-28 150959](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/e3be22f6-7473-49eb-ad74-46aa33e7c2ca)
-
-CONTACTS:
-
-![Screenshot 2024-03-07 155645](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/1937d395-2223-4d2b-aa5b-bcd87c2d9f7e)
-
-
-
-MENU:
-
-![Screenshot 2024-03-19 092428](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/7dbff8be-bb48-4794-a3cc-37fe37d3615f)
-
-![Screenshot 2024-03-19 092953](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/266d9aad-50c8-4482-92f5-e30205b755d6)
-
-
-
-
-
+![Screenshot 2024-05-30 130625](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/55a83884-0663-4ff1-bca3-899a49bd6e73)
+![Screenshot 2024-05-30 130609](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/dc04a2c6-c97a-4bdb-8df2-0c705d5637c9)
+![Screenshot 2024-05-30 130556](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/48c76680-e759-48e3-a301-a6174ecbd132)
+![Screenshot 2024-05-30 130140](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/dbcef6a8-2cac-49cf-a3dd-0a39d5164dd4)
+![Screenshot 2024-05-30 130126](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/8cc45f59-6ab2-4418-8cc5-88de60d01c07)
+![Screenshot 2024-05-30 130115](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/bc86bc62-104a-474e-8c69-f73e73b5e8f0)
+![Screenshot 2024-05-30 130057](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/3534975d-df1c-46d2-9f38-c247bdafd941)
+![Screenshot 2024-05-30 130031](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/02b3b20b-fda6-461f-8c4a-fb1655d89e33)
+![Screenshot 2024-05-30 130005](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/dd50ae6a-bfb0-49bd-872d-606229a18004)
+![Screenshot 2024-05-30 125923](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/43bb3c27-7ffc-4c6d-96a7-33424eff8711)
+![Screenshot 2024-05-30 125908](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/0647026d-f241-4e7b-b1a9-6bff4a2efb8d)
+![Screenshot 2024-05-30 125853](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/ba33164e-4360-4d21-979d-a11449ea59b4)
+![Screenshot 2024-05-30 125837](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/353866b7-74ad-4ccf-8855-f46d3db6f89a)
+![Screenshot 2024-05-30 125815](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/e1148708-64e0-416a-8a24-ceda630a5da7)
+![Screenshot 2024-05-30 125755](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/66dcaa87-8fe7-4d6b-a482-266b9ae662d7)
+![Screenshot 2024-05-30 125603](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/4e50697a-ed34-47d8-b520-cdf3f44e1589)
+![Screenshot 2024-05-30 125543](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/db2c16fe-eed3-45b7-ada6-f5ddadbcabb2)
+![Screenshot 2024-05-30 123727](https://github.com/Chaun09/NMC-Restaurant/assets/112841027/ea8de6f4-e8ad-4b6c-994a-ec117036ab68)
 
