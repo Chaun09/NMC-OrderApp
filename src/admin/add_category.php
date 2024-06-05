@@ -165,14 +165,14 @@ else
                 </div>     
          
                     
-                    <!-- <div class="col-md-4">
+                    <div class="col-md-4">
                         <div class="card p-30">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
                                     <span><i class="fa fa-spinner f-s-40" aria-hidden="true"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from orders WHERE status = 'in process' ";
+                                    <h2><?php $sql="select * from orderdetails WHERE status = 'in process' ";
 												$result=mysqli_query($link,$sql); 
 													$rws=mysqli_num_rows($result);
 													
@@ -183,14 +183,34 @@ else
                         </div>
                     </div>
 
+                    
+                <div class="row">
                     <div class="col-md-4">
                         <div class="card p-30">
                             <div class="media">
                                 <div class="media-left meida media-middle"> 
+                                    <span><i class="fa fa-times f-s-40" aria-hidden="true"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2><?php $sql="select * from orderdetails WHERE status = 'rejected' ";
+                                        $result=mysqli_query($link,$sql); 
+                                            $rws=mysqli_num_rows($result);
+                                            
+                                            echo $rws;?></h2>
+                                    <p class="m-b-0">Cancelled Orders</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">                          
                                     <span><i class="fa fa-check f-s-40" aria-hidden="true"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from orders WHERE status = 'closed' ";
+                                    <h2><?php $sql="select * from orderdetails WHERE status = 'closed' ";
 												$result=mysqli_query($link,$sql); 
 													$rws=mysqli_num_rows($result);
 													
@@ -202,26 +222,8 @@ else
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card p-30">
-                            <div class="media">
-                                <div class="media-left meida media-middle"> 
-                                    <span><i class="fa fa-times f-s-40" aria-hidden="true"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from orders WHERE status = 'rejected' ";
-                                        $result=mysqli_query($link,$sql); 
-                                            $rws=mysqli_num_rows($result);
-                                            
-                                            echo $rws;?></h2>
-                                    <p class="m-b-0">Cancelled Orders</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-              -->
+             
                 </div>
             </div>
         </div>     

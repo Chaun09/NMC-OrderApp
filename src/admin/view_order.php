@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include("../connection/connect.php");
+include("../php/config.php");
 error_reporting(0);
 session_start();
 
@@ -144,8 +144,8 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
                                        
                                         <tbody>
                                            <?php
-											$sql="SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id where o_id='".$_GET['user_upd']."'";
-												$query=mysqli_query($db,$sql);
+											$sql="SELECT * FROM orderdetails  where order_detail_id ='".$_GET['user_upd']."'";
+												$query=mysqli_query($link,$sql);
 												$rows=mysqli_fetch_array($query);
 												
 												
@@ -153,26 +153,27 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 												?>
 											
 											<tr>
+                                            <?php
+											$sql="SELECT * FROM users  where user_id = '$rows[user_id]'";
+												$query=mysqli_query($link,$sql);
+												$row=mysqli_fetch_array($query);
+												
+												
+																		
+												?>
+											
+
 													<td><strong>Username:</strong></td>
-												    <td><center><?php echo $rows['username']; ?></center></td>
+												    <td><center><?php echo $row['username']; ?></center></td>
 													   <td><center>
-													   <a href="javascript:void(0);" onClick="popUpWindow('order_update.php?form_id=<?php echo htmlentities($rows['o_id']);?>');" title="Update order">
+													   <a href="javascript:void(0);" onClick="popUpWindow('order_update.php?form_id=<?php echo htmlentities($rows['order_detail_id']);?>');" title="Update order">
 															 <button type="button" class="btn btn-primary">Update Order Status</button></a>
 															 </center>
 											 </td>
 												  
 																																					
 											</tr>	
-											<tr>
-												<td><strong>Title:</strong></td>
-												    <td><center><?php echo $rows['title']; ?></center></td>
-													    <td><center>
-													   <a href="javascript:void(0);" onClick="popUpWindow('userprofile.php?newform_id=<?php echo htmlentities($rows['o_id']);?>');" title="Update order">
-														<button type="button" class="btn btn-primary">View User Detials</button></a>
 											
-													   </center></td>
-												   																								
-											</tr>	
 											<tr>
 													<td><strong>Quantity:</strong></td>
 												    <td><center><?php echo $rows['quantity']; ?></center></td>
@@ -181,7 +182,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 											</tr>
 											<tr>
 													<td><strong>Price:</strong></td>
-												    <td><center>$<?php echo $rows['price']; ?></center></td>
+												    <td><center>$<?php echo $rows['subtotal']; ?></center></td>
 													   
 												   																							
 											</tr>

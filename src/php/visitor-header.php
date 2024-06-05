@@ -22,9 +22,9 @@
                     <nav>
                         <ul class="main-menu">
                        
-                            <li><a href="student-forum.php">Forum</a></li>
+                 
                             <li><a href="visitor-faq.php">FAQ</a></li>
-                            <li><a href="visitor-aboutus.php">About Us</a></li>
+                            <li><a href="../about-us.html">About Us</a></li>
                         </ul>
                     </nav>
                 </div>

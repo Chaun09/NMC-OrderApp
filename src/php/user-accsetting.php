@@ -7,6 +7,12 @@ $sql = "SELECT * FROM users WHERE user_id = '$log_userid' LIMIT 1";
 $result = mysqli_query($link, $sql);
 $row = mysqli_fetch_array($result);
 $sid = $row['user_id'];
+if(!isset($_SESSION['id']))
+{
+  echo '<script>alert("You must log in to your account first.")</script>';
+  echo '<script>location.href="index.php"</script>';
+}
+
 ?>
 
 <!DOCTYPE html>

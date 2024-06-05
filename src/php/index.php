@@ -63,7 +63,7 @@ if (isset($_GET['submit1'])) {
                 while ($row = mysqli_fetch_array($re))
                 {
                 ?>
-                <a class="quiz-link">
+                <a class="quiz-link" href="dishes.php?res_id=<?php echo $row['product_id']; ?>">
                     
                     <div class="quiz-card">
                         
@@ -117,7 +117,7 @@ if (isset($_GET['submit1'])) {
             
                 while ($row = mysqli_fetch_array($result)){
                 ?>
-                <a class="quiz-link">
+                <a class="quiz-link" href="dishes.php?res_id=<?php echo $row['product_id']; ?>">
                     <div class="quiz-card">
                         <img class="quiz-cover-pic" src="../images/<?php echo $row['Image']?>" alt="Quiz cover picture">
                         <p class="quiz-title" style="text-align:center; font-size:30px;"><?php echo $row['product_name']?></p>

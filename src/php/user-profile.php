@@ -8,6 +8,12 @@ $result = mysqli_query($link, $finduser_sql);
 $row = mysqli_fetch_array($result);
 $sid = $row['user_id'];
 
+if(!isset($_SESSION['id']))
+{
+  echo '<script>alert("You must log in to your account first.")</script>';
+  echo '<script>location.href="index.php"</script>';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +72,11 @@ $sid = $row['user_id'];
                             <span class="complete-box-number">
                                 <?php echo $rowNum;?>
                             </span>
+                            
                         </div>
+                        <form action="show_order.php" method="POST"> 
+                        <input style="height: 40px; width: 80px;  " type="submit" name="submit" value="See">
+                        </form>
 
                         <?php
                         $num_of_question_sql = "SELECT * FROM orders WHERE user_id = '$log_userid'";
@@ -91,6 +101,9 @@ $sid = $row['user_id'];
                                 <?php echo $num_question;?>
                             </span>
                         </div>
+                        <form action="show_order_details.php" method="POST">
+                        <input style="height: 40px; width: 80px; " type="submit" name="submit1" value="See">
+                        </form>
                     </div>
                 </div>
             </div>

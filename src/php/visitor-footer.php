@@ -26,10 +26,10 @@
                 </div>
             </div>
             <div class="footer-menu">
-                <a href="student-quiz.php">Food</a>
-                <a href="student-forum.php">Forum</a>
+                <a href="index.php">Food</a>
+           
                 <a href="visitor-faq.php">FAQ</a>
-                <a href="visitor-aboutus.php">About Us</a>
+                <a href="../about-us.html">About Us</a>
                 <a href="visitor-term">Terms</a>
             </div>
         </div>

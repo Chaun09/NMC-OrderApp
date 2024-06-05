@@ -3,9 +3,19 @@
 session_start();
 $userid = $_SESSION["id"];
 
+
 include "config.php";
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') 
+{
+    if(!isset($_SESSION['id']))
+    {
+      echo '<script>alert("You must log in to your account first.")</script>';
+      echo '<script>location.href="index.php"</script>';
+    }
+    else {
+    
+
     $product_id = $_POST['product_id'];
     $quantity = $_POST['quantity'];
     $sql = "SELECT * FROM products WHERE product_id = '$product_id'";
@@ -23,7 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    if (mysqli_query($link, $server) == 1 && mysqli_query($link, $server1) == 1) {
     header("Location: cart.php");
     exit();
-}    }
+}    
+}
+}
 else {
     echo "Unsuccessful";
 }
