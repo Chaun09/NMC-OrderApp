@@ -228,7 +228,7 @@ if (isset($_GET['submit1'])) {
   
       <div class="clear"></div>
       <div class="bottom_block">
-        <div class="grid_6">
+        <div style="transform:translate(150%,0%);" class="grid_6">
           <div class="down">
           <h3>Follow Us</h3>
           <div class="socials">  <a href="#"><img class="fb" src="images/fb.jpg" height="30px" width="30px"></a> 
@@ -301,7 +301,7 @@ if (isset($_GET['submit1'])) {
       </div>
       <style>
         .Email{
-          transform: translate(15%,-500%);
+          transform: translate(35%,-490%);
         }
         .prev4 {
 	background: url("images/prevnext.png") 0 bottom no-repeat;

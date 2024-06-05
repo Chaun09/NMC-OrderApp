@@ -7,15 +7,10 @@ error_reporting(0);
 session_start();
 
 $userid = $_SESSION['id'];
-if(!isset($_SESSION['id']))
-{
-  echo '<script>alert("You must log in to your account first.")</script>';
-  echo '<script>location.href="index.php"</script>';
+if (!isset($_SESSION['id'])) {
+    echo '<script>alert("You must log in to your account first.")</script>';
+    echo '<script>location.href="index.php"</script>';
 }
-
-
-
-
 ?>
 <head>
     <meta charset="utf-8">
@@ -31,265 +26,200 @@ if(!isset($_SESSION['id']))
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-<style type="text/css" rel="stylesheet">
+    <style type="text/css" rel="stylesheet">
+        .indent-small {
+            margin-left: 5px;
+        }
+        .form-group.internal {
+            margin-bottom: 0;
+        }
+        .dialog-panel {
+            margin: 10px;
+        }
+        .datepicker-dropdown {
+            z-index: 200 !important;
+        }
+        .panel-body {
+            background: #e5e5e5;
+            background: -moz-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+            background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #e5e5e5), color-stop(100%, #ffffff));
+            background: -webkit-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+            background: -o-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+            background: -ms-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+            background: radial-gradient(ellipse at center, #e5e5e5 0%, #ffffff 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#ffffff', GradientType=1);
+            font: 600 15px "Open Sans", Arial, sans-serif;
+        }
+        label.control-label {
+            font-weight: 600;
+            color: #777;
+        }
 
-
-
-.indent-small {
-  margin-left: 5px;
-}
-.form-group.internal {
-  margin-bottom: 0;
-}
-.dialog-panel {
-  margin: 10px;
-}
-.datepicker-dropdown {
-  z-index: 200 !important;
-}
-.panel-body {
-  background: #e5e5e5;
-  /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #e5e5e5), color-stop(100%, #ffffff));
-  /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
-  /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
-  /* IE10+ */
-  background: radial-gradient(ellipse at center, #e5e5e5 0%, #ffffff 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#ffffff', GradientType=1);
-  font: 600 15px "Open Sans", Arial, sans-serif;
-}
-label.control-label {
-  font-weight: 600;
-  color: #777;
-}
-
-/* 
-table { 
-	width: 750px; 
-	border-collapse: collapse; 
-	margin: auto;
-	
-	}
-
-/* Zebra striping */
-/* tr:nth-of-type(odd) { 
-	background: #eee; 
-	}
-
-th { 
-	background: #404040; 
-	color: white; 
-	font-weight: bold; 
-	
-	}
-
-td, th { 
-	padding: 10px; 
-	border: 1px solid #ccc; 
-	text-align: left; 
-	font-size: 14px;
-	
-	} */ */
-
-
-
-th {
-	background-color: #5fa022;
-}
-
-
-
-
-	</style>
-
-	</head>
-
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        thead tr {
+            background-color: #404040;
+            color: white;
+            text-align: left;
+            font-weight: bold;
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #dddddd;
+        }
+        tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+        th {
+            background-color: #5fa022;
+        }
+        .btn {
+            padding: 5px 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .confirm-button {
+            background-color: #5fa022;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .confirm-button:hover {
+            background-color: #4a8a19;
+        }
+    </style>
+</head>
 <body>
-<?php include("backbtn.php");?>
-    
-      
-        
-        <div class="page-wrapper">
-       
-           
-    
-       
-            <div class="result-show">
-                <div class="container">
-                    <div class="row">
-                       
-                       
-                    </div>
-                </div>
+    <?php include("backbtn.php");?>
+    <div class="page-wrapper">
+        <div class="result-show">
+            <div class="container">
+                <div class="row"></div>
             </div>
-    
-            <section class="restaurants-page">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                          </div>
-                        <div class="col-xs-12">
-                            <div class="bg-gray">
-                                <div class="row">
-								
-							<table class="table table-bordered table-hover">
-						  <thead style = "background: #404040; color:white;">
-							<tr>
-							
-							  <th>Item</th>
-							  <th>Quantity</th>
-							  <th>Price</th>
-							   <th>Status</th>
-							     <th>Action</th>
-								   <th>Date</th>
-							  
-							</tr>
-						  </thead>
-						  <tbody>
-						  
-						  
-							<?php 
-				
-						$query_res= mysqli_query($link,"select * from cart where user_id ='".$_SESSION['id']."'");
-												if(!mysqli_num_rows($query_res) > 0 )
-														{
-															echo '<td colspan="6"><center>You have No orders Placed yet. </center></td>';
-														}
-													else
-														{			      
-										  
-										  while($row=mysqli_fetch_array($query_res))
-										  {
-						
-							?>
-												<tr>	
-														 <td data-column="Item"> <?php echo $row['product_name']; ?></td>
-														  <td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
-														  <td data-column="price">$<?php echo $row['total_amount']; ?></td>
-														   <td data-column="status"> 
-														   <?php 
-																			$status=$row['status'];
-																			if($status=="" or $status=="NULL")
-																			{
-																			?>
-																			<button type="button" class="btn btn-info"><span class="fa fa-bars"  aria-hidden="true" ></span> Dispatch</button>
-																			<td data-column="Action"> <a href="delete_orders.php?order_del=<?php echo $row['product_id'];?>" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+        </div>
+        <section class="restaurants-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12"></div>
+                    <div class="col-xs-12">
+                        <div class="bg-gray">
+                            <div class="row">
+                                <table class="table table-bordered table-hover">
+                                    <thead style="background: #404040; color:white;">
+                                        <tr>
+                                            <th>Item</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $query_res = mysqli_query($link, "select * from cart where user_id ='" . $_SESSION['id'] . "'");
+                                        if (!mysqli_num_rows($query_res) > 0) {
+                                            echo '<td colspan="6"><center>You have No orders Placed yet. </center></td>';
+                                        } else {
+                                            while ($row = mysqli_fetch_array($query_res)) {
+                                        ?>
+                                                <tr>
+                                                    <td data-column="Item"> <?php echo $row['product_name']; ?></td>
+                                                    <td data-column="Quantity"> <?php echo $row['quantity']; ?></td>
+                                                    <td data-column="price">$<?php echo $row['total_amount']; ?></td>
+                                                    <td data-column="status">
+                                                        <?php
+                                                        $status = $row['status'];
+                                                        if ($status == "" or $status == "NULL") {
+                                                        ?>
+                                                            <button type="button" class="btn btn-info"><span class="fa fa-bars" aria-hidden="true"></span> Dispatch</button>
+                                                    <td data-column="Action"> <a href="delete_orders.php?order_del=<?php echo $row['product_id']; ?>" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
+                                                        <?php
+                                                        }
+                                                        if ($status == "Process") { ?>
+                                                            <button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin" aria-hidden="true"></span> On The Way!</button>
+                                                        <?php
+                                                        }
+                                                        if ($status == "Closed") {
+                                                        ?>
+                                                            <button type="button" class="btn btn-success"><span class="fa fa-check-circle" aria-hidden="true"></span> Delivered</button>
+                                                        <?php
+                                                        }
+                                                        if ($status == "Rejected") {
+                                                        ?>
+                                                            <button type="button" class="btn btn-danger"> <i class="fa fa-close"></i> Cancelled</button>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </td>
+                                                    <td data-column="Date"> <?php echo $row['order_date']; ?></td>
+                                                </tr>
+                                        <?php }
+                                        } ?>
+                                        <?php
+                                        function countItemsInCart()
+                                        {
+                                            global $link;
 
-																		   <?php 
-																			  }
-																			   if($status=="Process")
-																			 { ?>
-																				<button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span> On The Way!</button>
-																			<?php
-																				}
-																			if($status=="Closed")
-																				{
-																			?>
-																			 <button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true"></span> Delivered</button> 
-																			<?php 
-																			} 
-																			?>
-																			<?php
-																			if($status=="Rejected")
-																				{
-																			?>
-																			 <button type="button" class="btn btn-danger"> <i class="fa fa-close"></i> Cancelled</button>
-																			<?php 
-																			} 
-																			?>
-														   
-														   
-														   
-														   
-														   
-														   
-														   </td>
-														  <td data-column="Date"> <?php echo $row['order_date']; ?></td>
-														  
-															</td>
-														 
-												</tr>
-												
-											
-														<?php }} ?>		
-												<?php 
-												function countItemsInCart() {
-													global $link;
-												
-													$sql = "SELECT SUM(quantity) as total_items FROM cart WHERE user_id ='".$_SESSION['id']."'";
-													$result = $link->query($sql);
-												
-													if ($result->num_rows > 0) {
-														$row = $result->fetch_assoc();
-														return $row['total_items'];
-													} else {
-														return 0;
-													}
-												}
-												
-												
-												?>	
-												<tr>Số Lượng sản phẩm có trong giỏ hàng: <?php echo countItemsInCart();?></tr>		
-												<br>
-												<?php 
-														function countPriceInCart() {
-															global $link;
-														
-															$sql = "SELECT SUM(total_amount) as total_price FROM cart WHERE user_id ='".$_SESSION['id']."'";
-															$result = $link->query($sql);
-														
-															if ($result->num_rows > 0) {
-																$row = $result->fetch_assoc();
-																return $row['total_price'];
-															} else {
-																return 0;
-															}
-														}
-														
-												?>
-												<tr>Tổng số tiền: <?php echo countPriceInCart();?></tr>		
-	
-							
-							
-										
-						
-						  </tbody>
+                                            $sql = "SELECT SUM(quantity) as total_items FROM cart WHERE user_id ='" . $_SESSION['id'] . "'";
+                                            $result = $link->query($sql);
 
-					</table>
-					<form action="insert_orderdetails.php" method="post">
-        <input type="hidden" name="product_id" value="<?php echo $prdid; ?>">
-        <input type="hidden" id="quantity_input" name="quantity" value="1">
-        <button class="confirm-button" type="submit">Xác nhận</button>
-    </form>
-						
-					
-                                    
-                                </div>
-                           
+                                            if ($result->num_rows > 0) {
+                                                $row = $result->fetch_assoc();
+                                                return $row['total_items'];
+                                            } else {
+                                                return 0;
+                                            }
+                                        }
+                                        ?>
+                                        <tr>Số Lượng sản phẩm có trong giỏ hàng: <?php echo countItemsInCart(); ?></tr>
+                                        <br>
+                                        <?php
+                                        function countPriceInCart()
+                                        {
+                                            global $link;
+
+                                            $sql = "SELECT SUM(total_amount) as total_price FROM cart WHERE user_id ='" . $_SESSION['id'] . "'";
+                                            $result = $link->query($sql);
+
+                                            if ($result->num_rows > 0) {
+                                                $row = $result->fetch_assoc();
+                                                return $row['total_price'];
+                                            } else {
+                                                return 0;
+                                            }
+                                        }
+                                        ?>
+                                        <tr>Tổng số tiền: <?php echo countPriceInCart(); ?></tr>
+                                    </tbody>
+                                </table>
+                                <form action="insert_orderdetails.php" method="post">
+                                    <input type="hidden" name="product_id" value="<?php echo $prdid; ?>">
+                                    <input type="hidden" id="quantity_input" name="quantity" value="1">
+                                    <button class="confirm-button" type="submit">Xác nhận</button>
+                                </form>
                             </div>
-                         
-                            
-                                
-                            </div>
-                          
-                          
-                           
                         </div>
                     </div>
                 </div>
-            </section>
-
-
-           
-        
-        </div>
+            </div>
+        </section>
+    </div>
   
     <script src="https://kit.fontawesome.com/8e94eefdff.js" crossorigin="anonymous"></script>
     <script src="js/jquery.min.js"></script>

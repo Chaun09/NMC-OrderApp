@@ -672,6 +672,12 @@ $(window).load(function () {
               .signup{
                 transform: translate(800%,-101.1%);
               }
+              div.grid_6 {
+                transform: translate(130%,0%);
+              }
+              label.email{
+                transform: translate(-1%,0%);
+              }
               </style>
           </nav>
         </div>
