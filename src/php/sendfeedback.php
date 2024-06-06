@@ -21,7 +21,8 @@ if (isset($_POST['send'])) {
     $sql = "INSERT INTO feedback (fullname, email, phone, MESSAGE_TEXT) VALUES ('$name', '$email', '$phone', '$message')";
     
     if ($link->query($sql) === TRUE) {
-        echo "Data inserted successfully";
+        echo '<script>alert("Bạn đã gửi feedback thành công !")</script>';
+        echo '<script>location.href="../index.php"</script>';
     } else {
         echo "Error: " . $sql . "<br>" . $link->error;
     }
