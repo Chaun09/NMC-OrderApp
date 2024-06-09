@@ -6,6 +6,9 @@ include "config.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
+    
+   
+    
     $sql = "SELECT SUM(total_amount) as total_price FROM orders WHERE user_id = '$userid'";
     $result = $link->query($sql);
     $row = $result->fetch_assoc();
@@ -84,10 +87,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             <input type="radio" name="cash" value="Banking" required>
             <button type="submit" name="submit">Submit</button>
         </form>';
-    }    
+    }   
     else 
     {
         echo "Unsuccessful";
     }
 }
+
 ?>

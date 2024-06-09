@@ -55,7 +55,7 @@ $result = mysqli_query($link, $sql);
 $row = mysqli_fetch_array($result);
 
 ?>
-<div style="border-radius:20px; border-color: #4CAF50; box-shadow: black;" class="food-item">
+<div style="border-radius:20px; border-color: #4CAF50; box-shadow: black; " class="food-item">
     <h2 style="text-align:center;"><?php echo $row['product_name']; ?></h2>
    <img style="border-radius: 20px;" height="300px" width="300px" src="../images/<?php echo $row['Image'];?>">
 
