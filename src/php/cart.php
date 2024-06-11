@@ -135,7 +135,13 @@ if (!isset($_SESSION['id'])) {
                                         $query_res = mysqli_query($link, "select * from cart where user_id ='" . $_SESSION['id'] . "'");
                                         if (!mysqli_num_rows($query_res) > 0) {
                                             echo '<td colspan="6"><center>You have No orders Placed yet. </center></td>';
+                                            
                                         } else {
+                                            echo '  <form action="insert_orderdetails.php" method="post">
+                                    <input type="hidden" name="product_id" value="<?php echo $prdid; ?>">
+                                    <input type="hidden" id="quantity_input" name="quantity" value="1">
+                                    <button class="confirm-button" type="submit">Xác nhận</button>
+                                </form>';
                                             while ($row = mysqli_fetch_array($query_res)) {
                                         ?>
                                                 <tr>
@@ -187,6 +193,8 @@ if (!isset($_SESSION['id'])) {
                                             }
                                         }
                                         ?>
+                                        <br>
+                                        <br>
                                         <tr>Số Lượng sản phẩm có trong giỏ hàng: <?php echo countItemsInCart(); ?></tr>
                                         <br>
                                         <?php
@@ -208,11 +216,7 @@ if (!isset($_SESSION['id'])) {
                                         <tr>Tổng số tiền: <?php echo countPriceInCart(); ?></tr>
                                     </tbody>
                                 </table>
-                                <form action="insert_orderdetails.php" method="post">
-                                    <input type="hidden" name="product_id" value="<?php echo $prdid; ?>">
-                                    <input type="hidden" id="quantity_input" name="quantity" value="1">
-                                    <button class="confirm-button" type="submit">Xác nhận</button>
-                                </form>
+                               
                             </div>
                         </div>
                     </div>
