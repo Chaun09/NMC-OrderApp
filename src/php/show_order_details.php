@@ -13,7 +13,7 @@ if(!isset($_SESSION['id'])) {
   echo '<script>location.href="index.php"</script>';
 }
 
-if(isset($_POST['submit1'])){
+
 $sql = "SELECT * FROM orders WHERE user_id = '$log_userid'";
 $result = mysqli_query($link, $sql);
 include("backbtn.php");
@@ -92,5 +92,5 @@ echo "
 </body>
 </html>
 ";
-}
+
 ?>

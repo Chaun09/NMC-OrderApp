@@ -65,18 +65,19 @@ if(!isset($_SESSION['id']))
                             mysqli_free_result($resultQuiz);
                         }
                         ?>
+                        
                         <div class="complete-quiz-box">
+                            <a href="show_order.php">
                             <p class="complete-box-title">
                                 Order History
                             </p>
                             <span class="complete-box-number">
                                 <?php echo $rowNum;?>
                             </span>
-                            
+                           </a>  
                         </div>
-                        <form action="show_order.php" method="POST"> 
-                        <input style="height: 40px; width: 80px;  " type="submit" name="submit" value="See">
-                        </form>
+                   
+                       
 
                         <?php
                         $num_of_question_sql = "SELECT * FROM orders WHERE user_id = '$log_userid'";
@@ -94,16 +95,16 @@ if(!isset($_SESSION['id']))
                         }
                         ?>
                         <div class="question-box">
+                            <a href="show_order_details.php">
                             <p class="question-box-title">
                                 Details About My Order History
                             </p>
                             <span class="question-box-number">
                                 <?php echo $num_question;?>
                             </span>
+                        </a>
                         </div>
-                        <form action="show_order_details.php" method="POST">
-                        <input style="height: 40px; width: 80px; " type="submit" name="submit1" value="See">
-                        </form>
+                       
                     </div>
                 </div>
             </div>

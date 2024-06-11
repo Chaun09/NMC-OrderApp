@@ -70,7 +70,7 @@ if (isset($_GET['submit1'])) {
                         <img class="quiz-cover-pic" src="../images/<?php echo $row['Image']?>" alt="Quiz cover picture">
                         <p class="quiz-title" style="text-align:center; font-size:30px;"><?php echo $row['product_name']?></p>
                         <div class="quiz-tag">
-                            <p class="quiz-subject"><?php echo $row['description']?></p>
+                          
                             <p class="quiz-question"><?php echo $row['price']?>VNĐ</p>
                             <p class="quiz-play"><?php echo $row['stock_quantity']?>STQ</p>
                         </div>
@@ -122,7 +122,7 @@ if (isset($_GET['submit1'])) {
                         <img class="quiz-cover-pic" src="../images/<?php echo $row['Image']?>" alt="Quiz cover picture">
                         <p class="quiz-title" style="text-align:center; font-size:30px;"><?php echo $row['product_name']?></p>
                         <div class="quiz-tag">
-                            <p class="quiz-subject"><?php echo $row['description']?></p>
+                         
                             <p class="quiz-question"><?php echo $row['price']?>$</p>
 
                             <p class="quiz-play"><?php echo $row['stock_quantity']?>STQ</p>
