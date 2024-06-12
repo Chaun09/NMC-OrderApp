@@ -47,13 +47,14 @@ tbody tr:last-of-type {
 }
 </style>
 
-
+<a href='Cart_edit.php?cart_ed=$row[product_id]'>
 <table>
 <thead>
 <th>ProductName</th>
 <th>Quantity</th>
 <th>Price</th>
 <th>Total</th>
+<th>Action</th>
 
 </thead>
 <tbody>
@@ -65,9 +66,18 @@ tbody tr:last-of-type {
 </td>
 <td>$row[price]</td>
 <td>$row[total_amount]</td>
-</tbody>
+<td>
 
-";
+<button name='submit'>Xác Nhận</button>
+
+</td>
+</tbody>
+</table>
+</a>";
+
+
+
+
     
 
 
