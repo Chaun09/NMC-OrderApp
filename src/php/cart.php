@@ -126,7 +126,8 @@ if (!isset($_SESSION['id'])) {
                                             <th>Quantity</th>
                                             <th>Price</th>
                                             <th>Status</th>
-                                            <th>Action</th>
+                                            <th>Delete</th>
+                                            <th>Edit</th>
                                             <th>Date</th>
                                         </tr>
                                     </thead>
@@ -155,6 +156,7 @@ if (!isset($_SESSION['id'])) {
                                                         ?>
                                                             <button type="button" class="btn btn-info"><span class="fa fa-bars" aria-hidden="true"></span> Dispatch</button>
                                                     <td data-column="Action"> <a href="delete_orders.php?order_del=<?php echo $row['product_id']; ?>" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
+                                                    <td data-column="Action"> <a href="update_orders.php?order_edit= <?php echo $row['product_id']; ?>" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit" style="font-size: 16px;"></i></a>
                                                         <?php
                                                         }
                                                         if ($status == "Process") { ?>

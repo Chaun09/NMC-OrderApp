@@ -186,9 +186,7 @@ $(window).load(function () {
                               }
                             </style>   
                             </ul>
-                          
-                            
-              </li>
+                       </li>
             
            
           
