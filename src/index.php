@@ -228,15 +228,9 @@ $(window).load(function () {
       <div class="grid_7">
         <h2>Welcome</h2>
         <div class="page1_block col1"> 
-          <img style="transform: translate(-25%,-15%);" src="images/Thiết_kế_chưa_có_tên-removebg-preview.png" alt="">
-          <img style="transform: translate(28%,-129%);height: 250px;width: fit-content;" src="images/anhminh-removebg-preview.png" alt="">
-          <img src="images/phongdo.jpg" style="height: 175px; width: 175px;  border-radius: 175px; transform: translate(-6%,-163%);">
-          
           
           <div class="info1">
-          <p class="minh"> Phó Giám Đốc Điều Hành <br>Đỗ Tuấn Phong</p>
-          <button class="buttom" style="transform: translate(115%,-90%);"><a href="">About Me </a></button>
-
+         
           
         </div>
         
@@ -277,24 +271,7 @@ $(window).load(function () {
             }
         
           </style>
-          <div class="extra_wrapper">
-            
-            <div class="info">
-            <p class="chau" style="text-align: center;">CEO Nhà Hàng<br>Nguyễn Minh Châu</p>
-            <button class="btn_10"><a href="">About Me </a></button>
-            </div>
-      
-
-          </div>
-          <div class="extra_wrapper1">
-            
-            <div class="info">
-            <p class="phong" style="text-align: center; transform: translate(-35%,-70%);">Giám Đốc Nhà Hàng<br>Trần Anh Minh</p>
-            <button class="btn_11" ><a href="">About Me </a></button>
-            </div>
-      
-
-          </div>
+         
             <style>
               .btn_11{
                 transform: translate(-160%,-160%);
